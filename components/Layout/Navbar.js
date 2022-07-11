@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import styles from '../../styles/Layout/Navbar.module.scss';
 import navButtonStyles from '../../styles/Components/NavButton.module.scss';
 
-import CILogo from '../../assets/logo-2.svg';
+import CILogo from '../../assets/logo.svg';
 import ContactIcon from '../../assets/ContactIcon.svg'
 import { IoMenu } from 'react-icons/io5';
 import { HiInformationCircle } from 'react-icons/hi';

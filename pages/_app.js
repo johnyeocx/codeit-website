@@ -5,6 +5,7 @@ import '../styles/reviews.scss';
 import Layout from '../components/Layout/Layout';
 
 import AppContext from '../AppContext';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -52,6 +53,11 @@ function MyApp({ Component, pageProps }) {
         setBgColor: setBgColor
       }}
     >
+      <Head>
+        <title>CodeIT Academy</title>
+        <link rel="icon" href="/logo.png" />
+        {/* <meta property="og:title" content="Website Title" key="title" /> */}
+      </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>
