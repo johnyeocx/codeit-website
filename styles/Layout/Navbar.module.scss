@@ -1,0 +1,227 @@
+@import "../config";
+
+// NAV BAR
+#navContainer {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    @include flexCenter;
+    background-color: $navBg;
+
+    .navLeft {
+        width: 5%;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 30px;
+        
+        #logo {
+            width: 150px;
+        }
+    }
+
+    .navRight {
+        width: 90%;
+        @include flexCenter;
+        justify-content: flex-end;
+        padding-right: 30px;
+
+        #menuIcon {
+            font-size: 30px;
+        }
+
+        #callIcon {
+            font-size: 22px;
+            width: 27px;
+            height: 27px;
+        }
+    }
+}
+
+.menuButton {
+    color: black;
+    @include flexCenter;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.menuContainer {
+    height: $pageHeight;
+    width: 100vw;
+    position: fixed;
+    top: $navHeight;
+    background-color: $navBg;
+    transition: right 0.4s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px 100px 30px;
+
+    .menuItem {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px 0px 50px 0px;
+    }
+
+    .menuItem .icon {
+        margin-right: 20px;
+        font-size: 1.5rem;
+        color: $violet;
+    }
+
+    .menuItem a {
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2a2d6e;
+    }
+}
+
+.registerBtnContainer {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.contactModal {
+    height: 0px;
+    overflow: hidden;
+    display: none;
+}
+
+.contactButtonContainer:hover .contactModal {
+    position: absolute;
+    height: fit-content;
+    right: 0px;
+    @include flexCenter;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;    
+    padding: 15px;
+    padding-left: 30px;
+    
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
+    }
+    
+
+    p {
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+$icon-size: 40px;
+$border-radius: 50%;
+$green: rgb(48, 193, 48);
+
+.iconFill {
+    cursor: pointer;
+	position: relative;
+	display: inline-block;
+	width: $icon-size;
+	height: $icon-size;
+	margin-left: 15px;
+	border-radius: 50%;
+	overflow: hidden;
+
+	&::before, &::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transition: all 0.25s ease;
+		border-radius: 50%;
+	}
+
+    .icon {
+        position: relative;
+        // left: $icon-size/2;
+		font-size: $icon-size/2;
+		margin-top: $icon-size/4;
+		transition: all 0.25s ease;
+    }
+}
+
+.iconFill {
+    &::before{
+		transition-duration: 0.5s;
+	}
+
+    &:hover {
+        .icon {
+            color: white;
+        }
+    }
+}
+
+$emailRed: #fb7070;
+#emailIcon {
+    color: $emailRed;
+
+    &::before{
+		box-shadow: inset 0 0 0 1.2px $emailRed;
+	}
+	&:hover::before{
+		box-shadow: inset 0 0 0 $icon-size $emailRed;
+	}
+}
+
+$whatsappGreen: #42C306;
+#whatsappIcon {
+    color: $whatsappGreen;
+
+    &::before{
+		box-shadow: inset 0 0 0 1.2px $whatsappGreen;
+	}
+	&:hover::before{
+		box-shadow: inset 0 0 0 $icon-size $whatsappGreen;
+	}
+}
+
+$teleBlue: #3BBCF6;
+#teleIcon {
+    color: $teleBlue;
+
+    &::before{
+		box-shadow: inset 0 0 0 1.2px $teleBlue;
+	}
+	&:hover::before{
+		box-shadow: inset 0 0 0 $icon-size $teleBlue;
+	}
+}
+
+$instaPink: #F53987;
+#instaIcon {
+    color: $instaPink;
+
+    &::before{
+		box-shadow: inset 0 0 0 1.2px $instaPink;
+	}
+	&:hover::before{
+		box-shadow: inset 0 0 0 $icon-size $instaPink;
+	}
+}
+
+$linkedBlue: #1F77B7;
+#linkedIcon {
+    color: $linkedBlue;
+
+    &::before{
+		box-shadow: inset 0 0 0 1.2px $linkedBlue;
+	}
+	&:hover::before{
+		box-shadow: inset 0 0 0 $icon-size $linkedBlue;
+	}
+}

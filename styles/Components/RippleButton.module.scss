@@ -1,0 +1,94 @@
+@import '../config';
+
+$mid: calc(100vw / 2 - 35px);
+$width: calc(100vw - 70px);
+
+
+
+.rippleButton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    font-size: 0.95rem;
+    border: 2px solid;
+    background-color: transparent;
+    border: 2px solid $salmon;
+    color: $salmon;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: color 0.4s, transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+
+    &:hover{
+        color: white;
+    }
+    
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: calc((100vw - 70px) / -2);
+        width: 100%;
+        height: $width;
+        background-color: salmon;
+        border-color: transparent;
+        border-radius: 50%;
+        transform:  scale(0.3);
+        transform-origin: center;
+        opacity: 0;
+        z-index: -1;
+        transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
+    }
+        
+    &:hover::after{
+        opacity: 1;
+        transform-origin: 75px 75px;
+        transform: scale(1.2) translate(-0px, -0px);
+    }
+}
+
+.rippleButtonSubmitting {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    font-size: 0.95rem;
+    border: 2px solid;
+    background-color: transparent;
+    border: 2px solid $salmon;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: color 0.4s, transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+    
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: calc((100vw - 70px) / -2);
+        width: 100%;
+        height: $width;
+        background-color: salmon;
+        border-color: transparent;
+        border-radius: 50%;
+        transform:  scale(0.3);
+        transform-origin: center;
+        z-index: -1;
+        transform-origin: 75px 75px;
+        transform: scale(1.2) translate(-0px, -0px);
+        transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
+    }
+}
+
+.rpSecondary {
+    color: $blue;
+    border-color: $blue;
+
+    &::after {
+        background-color: $blue;
+    }
+}

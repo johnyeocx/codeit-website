@@ -1,0 +1,123 @@
+@import '../config';
+
+.container {
+    width: 100vw;
+    height: 100px;
+    padding: 35px;
+
+    @media (min-width: $breakpoint-tablet) {
+        width: 50vw;
+        padding: 35px 50px;
+    } 
+}
+
+.containerTop {
+    margin-bottom: 30px;
+
+    h1 {
+        font-size: 30px;
+        color: $violet;
+    }
+
+    p {
+        margin: 0px 0px;
+        font-size: 15px;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+.sectionOne {
+    margin-bottom: 20px;
+
+    h4 {
+        font-weight: 600;
+        font-size: 17px;
+    }
+    .optionsContainer {
+        width: 150px;
+        height: 50px;
+        margin: 20px 0px;
+    }
+}
+
+.sectionTwo {
+    h4 {
+        font-weight: 600;
+        line-height: 25px;
+        font-size: 17px;
+        margin: 10px 0px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 20px;
+        margin: 10px 0px;
+    }
+}
+
+.sectionThree {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    p {
+        font-size: 12px;
+        letter-spacing: -0.1px;
+        margin: 0px;
+    }
+
+    margin-bottom: 20px;
+}
+
+.btnContainer {
+    position: relative;
+    margin-top: 10px;
+    height: 50px;
+}
+
+.errContainer {
+    @include flexCenter;
+    margin: 20px 0px;
+}
+
+
+
+.btnContainer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    // background-color: red;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color:rgb(250, 250, 250, 0.3);
+    border-width: 4px;
+    border-left-color:white;
+    font-size: 0;
+    animation: rotating 1s 0.25s linear infinite;
+  
+    // &:after {
+    //   content:"";
+    // }
+    // &:hover {
+    //   color: green;
+    //   background: white;
+    // }
+}
+

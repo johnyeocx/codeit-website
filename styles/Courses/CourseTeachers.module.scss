@@ -1,0 +1,100 @@
+@import '../config';
+
+
+.container {
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 35px;
+    background-color: #FFECE8;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 50px;
+
+    h1 {
+        color: $violet;
+        margin-bottom: 10px;
+    }
+
+    div {
+        width: 100px;
+        margin-right: 5px;
+        width: 150px;
+        height: 3px;
+        background-color: $violet;
+    }
+
+}
+
+.container2 {
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+   
+}
+
+.teacherCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+
+    .imgContainer {
+        position: relative;
+        width: 100px;
+        height: 130px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;        // height: 300px;
+    }
+
+    .teacherImg {
+        margin-right: 20px;
+    }
+
+    .teacherDetails {
+        margin-left: 30px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    h4 {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+        flex-direction: column;
+        .teacherDetails {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    }
+}
+
+.container3 {
+    width: 100%;
+    @include flexCenter;
+
+    .btnContainer {
+        position: relative;
+        width: 100%;
+        height: 55px;
+        z-index: 10;
+
+        max-width: 500px;
+    }
+}

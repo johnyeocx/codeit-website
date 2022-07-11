@@ -1,0 +1,37 @@
+@import '../config';
+
+$editorWidth: 500px;
+
+.container {
+    height: 100%;
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+
+.container .top {
+    // width: $editorWidth;
+    width: 90%;
+    height: 30px;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black
+}
+
+.container .bottom {
+    width: $editorWidth;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.runButtonContainer {
+    position: relative;
+    background-color: transparent;
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+}

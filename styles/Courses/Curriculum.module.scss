@@ -1,0 +1,125 @@
+@import '../config';
+
+.container {
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 35px;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: 60px ;
+    }
+}   
+
+.container1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 30px;
+
+    h1 {
+        color: $violet;
+        margin-bottom: 10px;
+    }
+
+    div {
+        width: 100px;
+        margin-right: 5px;
+        width: 150px;
+        height: 3px;
+        background-color: $violet;
+    }
+
+}
+
+.container2 {
+    width: 100%;
+}
+
+.lessonContainer {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #8587F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 8px;
+
+    .lessonHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        h2 {
+            font-size: 17px;
+            color: white;
+            font-weight: 600;
+            margin: 10px 0px;
+        }
+
+        .chevron {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.2s;
+        }
+    }
+
+    p {
+        font-family: $secondary-font;
+        font-size: 17px;
+        text-align: start;
+        font-weight: 500;
+        color: white;
+        overflow: hidden;
+        transition: max-height 0.1s;
+    }
+
+    .prereqContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: max-height 0.1s;
+
+        .sectionTitle {
+            font-weight: 600;
+            font-size: 17px;
+            margin: 3px 0px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.prereqButton {
+    background-color: #4f51c8;
+}
+
+.downloadContainer {
+    @include flexCenter;
+    height: 70px;
+    border-radius: 10px;
+
+    background-color: #fefefe;
+    
+    box-shadow: rgba(133, 135, 246, 0.8) 0px 2px 8px 0px;
+
+    .downloadIcon {
+        color: $violet;
+        font-size: 30px;
+        margin-right: 10px;
+    }
+
+    p {
+        color: $violet;
+        font-weight: 600;
+        font-size: 19px;
+    }
+}

@@ -1,0 +1,176 @@
+@import '../config';
+
+$bgColor: lighten($salmon, 20%);
+$paddingPercentage: 8%;
+
+
+.statHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 10px;
+    color: darken($light-blue, 35%);
+    padding: 0px 35px;
+
+    span {
+        color: black !important;
+        font-size: 20px;
+        margin-left: 5px;
+    }
+}
+
+.expertiseContainer {
+    margin-bottom: 30px;
+    background-color: $bgColor;
+    padding: 50px 0px;
+
+    h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    h2 span {
+        color: $violet
+    }
+}
+
+.titleContainer {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0px 35px;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: 0px $paddingPercentage;
+    }
+
+    // div{
+    //     transform: translateX(35px);
+    //     left: 2px;
+    //     @include headerLine(100px);
+
+    //     @media (min-width: $breakpoint-tablet) {
+    //         left: 10%;
+    //         @include headerLine(150px);
+    //     }
+        
+    // }
+}
+
+.teachersContainer {
+    position: relative;
+
+    h2 {
+        font-size: 30px;
+        text-align: start;
+        // font-weight: 600;
+        margin-bottom: 10px;
+        color: darken($light-blue, 35%);
+        padding: 0px 35px;
+
+        @media (min-width: $breakpoint-tablet) {
+            padding: 0px $paddingPercentage;
+        }
+    }
+
+    h2 span {
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    margin-bottom: 20px;
+}
+
+.brandsContainer {
+    width: 100%;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 0;
+        height: 100px;
+        width: 100%;
+        background: linear-gradient(to left, $bgColor 0%, rgba(255, 237, 237, 0) 20%, rgba(98, 98, 98, 0) 80%, $bgColor 100%);
+    }
+}
+
+.brandSlider {
+    position: relative;
+    display: flex;
+    width: 2500px;
+    height: 100px;
+    animation: slide 10s linear infinite;
+
+
+    .brandImage {
+        object-fit: contain;
+    }
+}
+
+@keyframes slide {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-1269px, 0, 0); /* The image width */
+    }
+}
+
+.ratingsContainer {
+    @include flexCenter;
+    width: 100%;
+}
+
+.rating {
+    @include flexCenter;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0px;
+
+    .ratingBrand {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .ratingIconContainer {
+        width: 30px;
+    }
+
+    #ratingIcon {
+        width: 95px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-family: $secondary-font;
+        font-weight: 600;
+        font-size: 24px;
+    }
+}
+
+.rating:nth-child(1){
+    border-right: 1px solid black;
+}
+
+.bottomContainer {
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+}
+
+.approveContainer {
+    padding: 35px;
+}
+
+.approvedImageContainer {
+    padding: 35px;
+    position: relative;
+    @include flexCenter;
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
+}

@@ -1,0 +1,49 @@
+// FONTS
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Work Sans', sans-serif;
+
+// DIMENSIONS
+$breakpoint-mobile: 481px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 950px;
+$breakpoint-desktop: 1025px;
+
+$navHeight: 80px;
+$pageHeight: calc(100vh - 80px);
+
+// COLORS
+$violet: #8F90F7;
+$salmon: #FF9D87;
+$blue: #75B8FF;
+$light-blue: #BCEAFF;
+$navBg: #FFFDFD;
+$dark-blue: #355C92;
+
+$homeBackground: #FFFDFD;
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pageContainer {
+    top: $navHeight;
+    height: $pageHeight;
+    width: 100%;
+    overflow: auto;
+}
+
+@mixin sectionSize {
+    height: $pageHeight;
+    width: 100%;
+}
+
+@mixin headerLine($width) {
+    position: absolute;
+    width: $width;
+    margin-top: 15px;
+    background-color: $violet;
+    height: 3px;
+    border-radius: 1.5px;
+}

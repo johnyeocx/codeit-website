@@ -1,0 +1,108 @@
+@import '../config';
+
+$bgColor: lighten($salmon, 20%);
+.reviewsContainer {
+    // background-color: $bgColor;
+    padding-bottom: 100px;
+}
+
+
+.titleContainer {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0px 35px;
+    padding-top: 35px;
+    
+    @media (min-width: $breakpoint-tablet) {
+        padding: 0px 5%;
+        padding-top: 35px;
+    }
+
+    h1 {
+        text-align: start;
+    }
+
+    // div {
+    //     @include headerLine(150px);
+    // }
+}
+
+.cardUpper {
+    @include flexCenter;
+    width: 100%;
+
+    .left {
+        @include flexCenter;
+        justify-content: flex-start;
+        padding-left: 30px;
+        width: 39%;
+    }
+
+    .right {
+        width: 61%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        h4 {
+            margin: 0px;
+            font-weight: 500;
+        }
+    
+        p {
+            font-size: 14.5px;
+            font-weight: 500;
+        }
+    }
+
+    
+}
+
+.cardMiddle {
+    @include flexCenter;
+    padding: 15px 25px 15px 30px;
+
+    p {
+        // font-family: $secondary-font;
+        font-weight: 400;
+        text-align: start;
+        font-weight: 500;
+        font-size: 13px;
+    }
+}
+
+.imgContainer {
+    
+    position: relative;
+    width: 70px;
+    height: 70px;
+    // background-color: red;
+    @include flexCenter;
+
+    .reviewImage {
+        max-height: 70px !important;
+        min-height: 70px !important;
+        max-width: 70px !important;
+        min-width: 70px !important;
+        border-radius: 40px;
+    }
+}
+
+.containerBottom {
+    padding: 0px 35px;
+    z-index: -10;
+    @include flexCenter;
+}
+
+.rippleButtonContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent;
+    margin: 12.5px 0px;
+    height: 50px;
+}

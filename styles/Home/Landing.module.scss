@@ -1,0 +1,107 @@
+@import "../config";
+
+
+.landingContainer {
+  @include flexCenter;
+  @include sectionSize;
+  padding: 0px 35px;
+}
+
+.landingContainer .containerLeft {
+
+  height: 85%;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-laptop) {
+    width: 50%;
+    padding: 5px 3% 5px 8%;
+  }
+
+  .container1 {
+    @include flexCenter;
+    justify-content: left;
+    height: 20%;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 32px;
+
+      @media (min-width: $breakpoint-tablet) {
+        width: 100%;
+        font-size: 2rem;
+      }
+    }
+
+    h1 span {
+      color: $violet;
+    }
+  }
+  
+  .container2 {
+    @include flexCenter;
+    height: 30%;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (min-width: $breakpoint-laptop) {
+      width: 100%;
+      font-size: 1.2rem;
+      margin-bottom: 0px;
+    }
+
+    .left {
+      width: 60%;
+      font-size: 0.95rem;
+      
+
+      @media (min-width: $breakpoint-tablet) {
+        width: 100%;
+        font-size: 1.2rem;
+      }
+    }
+
+    .left span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .container3 {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+  }
+}
+
+.landingContainer .containerRight {
+  @media (min-width: $breakpoint-laptop) {
+    width: 50%;
+  }
+  height: 100%;
+}
+
+.rippleButtonContainer {
+  position: relative;
+  background-color: transparent;
+  margin: 12.5px 0px;
+  height: 50px;
+}
+
+.landingImage {
+  object-fit: contain;
+  width: 100px !important;
+}

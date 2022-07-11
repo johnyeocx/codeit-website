@@ -1,0 +1,13 @@
+@import '../config';
+
+.container {
+    position: absolute;
+    @include pageContainer; 
+    overflow-x: hidden;
+    background-color: $homeBackground;
+    z-index: -20;
+
+    h1 {
+        color: $violet;
+    }
+}

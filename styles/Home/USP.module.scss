@@ -1,0 +1,88 @@
+@import '../config.scss';
+
+.USPContainer {
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 35px;
+    margin-bottom: 50px;
+}
+
+.titleContainer {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.mainContainer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;   
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 50px;
+    }
+
+    .USPCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: darken($violet, 2%);
+        min-height: 250px;
+        max-height: 250px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 20px;
+
+        @media (min-width: $breakpoint-tablet) {
+            max-height: 400px;
+            max-width: 300px;
+        }
+    }
+
+    .USPCard .cardTop {
+        @include flexCenter;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+
+        .USPIcon {
+            margin-right: 15px;
+            color: white;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 22px;
+            color: white;
+        }
+    }
+
+    .USPCard .cardMiddle {
+        margin-bottom: 25px;
+        p {
+            font-size: 17px;
+            color: white;
+        }
+    }    
+
+    .USPCard .cardBottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            font-size: 1rem;
+            color: white;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}

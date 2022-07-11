@@ -1,0 +1,68 @@
+@import '../config';
+
+.container {
+    position: absolute;
+    height: calc(100vh - $navHeight);
+    width: 100vw;
+    overflow-x: hidden;
+    z-index: -20;
+}
+
+.contentContainer {
+    display: flex;
+    position: relative;
+
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        // max-width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        height: calc(100vh - 200px);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        
+
+        @media (max-width: $breakpoint-laptop) {
+            display: hidden;
+            max-width: 0px;
+            min-width: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+    }
+
+    .mainContent {
+        width: 100%;
+    }
+}
+
+.contentContainer .sidebar {
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .buttonsContainer {
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(220, 242, 255);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 20px;
+
+        button {
+            padding: 0px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+    }
+}
+

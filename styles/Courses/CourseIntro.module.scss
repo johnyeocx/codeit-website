@@ -1,0 +1,117 @@
+@import '../config';
+
+.container {
+    width: 100%;
+    @include flexCenter;
+    height: calc(100% - $navHeight);
+    justify-content: center;
+    padding: 35px;
+    background-color: #FFECE8;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: fit-content;
+        padding: 30px 100px;
+    }
+
+    .left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $breakpoint-tablet) {
+            width: 100%; 
+        }
+    }
+}
+
+.right .imgContainer {
+    position: relative;
+    width: 60%;
+    height: 50vh;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+    .introSvg {
+        width: 150px;
+    }
+
+    .titleContainer div {
+        width: 100px;
+        height: 2px;
+        border-radius: 10px;
+        background-color: $dark-blue;
+    }
+    
+    h1{
+        font-size: 25px;
+        color: $dark-blue;
+    }
+
+    .titleContainer {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media (min-width: $breakpoint-tablet) {
+            @include flexCenter;
+            h1 {
+                font-size: 25px;
+            }
+            div {
+                width: 200px;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+        margin-bottom: 10px;
+    }
+
+}
+
+.container2 {
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 10px;    
+    margin-bottom: 20px;
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    p span {
+        font-weight: 700;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+        @include flexCenter;
+        box-shadow: none;
+        background-color: transparent;
+        width: 100%;
+        margin: 0px;
+
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+}   
+
+.container3 {
+    color: darken($violet, 5%);
+    font-size: 20px;
+
+
+}

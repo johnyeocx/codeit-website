@@ -1,0 +1,103 @@
+@import "../config";
+
+.mainContainer {
+    @include flexCenter;
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px;
+
+    .left {
+       
+        width: 100%;
+        @include flexCenter;
+        flex-direction: column;
+        padding: 60px 5px 0px;
+        max-width: 600px;
+
+        @media (min-width: $breakpoint-laptop) {
+            max-width: none;
+            width: 70%;  
+            padding: 100px;
+            @include flexCenter;
+            flex-direction: column;
+        }
+    }
+
+    .right {
+        width: 0%
+    }
+}
+
+.mainContainer .right {
+    @include flexCenter;
+
+    .imgContainer {
+        position: relative;
+        width: 400px;
+        height: 450px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .imgContainer .img {
+
+    }
+}
+
+.containerTop {
+    
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    h1 {
+        color: $violet;
+        margin-bottom: 20px;
+        font-size: 35px;
+
+        @media (min-width: $breakpoint-tablet){
+            font-size: 40px;
+        }
+    }
+
+    h4 {
+        font-weight: 600;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 17px;
+
+        @media (min-width: $breakpoint-tablet){
+            font-size: 19px;
+        }
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+.containerBottom {
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+
+    @media (min-width: calc($breakpoint-laptop + 100px)) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .btnContainer {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 20px;
+        // max-width: 450px;
+
+        @media (min-width: calc($breakpoint-laptop + 100px)) {
+            width: 46%;
+        }
+    }
+}
