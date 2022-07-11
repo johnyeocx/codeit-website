@@ -19,7 +19,7 @@ const breakpoints = {
 }
 export const navigateSpeed = 0.4;
 
-function index() {
+function Register() {
 
     const value = useContext(AppContext);
     let { isMobile, dimensions } = value.state;
@@ -252,4 +252,4 @@ function index() {
     )
 }
 
-export default index
+export default Register

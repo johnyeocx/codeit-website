@@ -105,8 +105,8 @@ function TextEditor() {
             }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <h4 style={{ margin: 0 }}>Output: </h4>
-                    {userOutput.split('\n').map((line) => (
-                        <p>{line}</p>
+                    {userOutput.split('\n').map((line, index) => (
+                        <p key={index}>{line}</p>
                     ))}
                 </div>
                 <div className={styles.runButtonContainer} >

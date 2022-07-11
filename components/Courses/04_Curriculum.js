@@ -138,7 +138,12 @@ function Curriculum() {
                     )
                 })}
 
-                <a className={styles.downloadContainer} href={IntroBrochure} target="_blank">
+                <a
+                    className={styles.downloadContainer}
+                    href={IntroBrochure}
+                    rel="noreferrer"
+                    target="_blank"
+                >
                     <BiDownload className={styles.downloadIcon} />
                     <p>Course Brochure</p>
                 </a>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Team/Team.module.scss';
 
-function index() {
+function OurTeam() {
     return (
         <div className={styles.container}
             style={{
@@ -19,4 +19,4 @@ function index() {
     )
 }
 
-export default index
+export default OurTeam

@@ -39,7 +39,7 @@ function USP() {
 
             <div className={styles.titleContainer}>
                 <h1>
-                    Choose <span>codeit</span> and don't
+                    Choose <span>codeit</span> and don&apos;t
                     <span> look back</span>
                 </h1>
                 <div></div>

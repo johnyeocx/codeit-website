@@ -13,8 +13,8 @@ function SuccessPage({ selectedPage }) {
                 selectedPage === 4 &&
                 (
                     <div>
-                        <div class={styles.animationCtn}>
-                            <div class={`${styles.icon} ${styles.iconOrderSuccess} ${styles.svg}`}>
+                        <div className={styles.animationCtn}>
+                            <div className={`${styles.icon} ${styles.iconOrderSuccess} ${styles.svg}`}>
                                 <SuccessSVG />
                             </div>
 

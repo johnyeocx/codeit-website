@@ -11,7 +11,7 @@ import CourseTeachers from '../../components/Courses/06_CourseTeachers';
 import { ciIntro } from '../../components/Courses/courseData';
 import NavButton from '../../components/Layout/NavButton/NavButton';
 
-function introduction() {
+function Intro() {
     const value = useContext(AppContext);
     let { bgColor } = value.state;
     let { setBgColor } = value;
@@ -84,4 +84,4 @@ function introduction() {
     )
 }
 
-export default introduction
+export default Intro

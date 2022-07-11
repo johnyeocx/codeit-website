@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from '../../styles/Home/Statistics.module.scss';
-
-
-import ByteDance from '../../assets/Brands/ByteDance.png';
-import Binance from '../../assets/Brands/Binance.png';
-import DBS from '../../assets/Brands/DBS.png';
-import NUS from '../../assets/Brands/NUS.png';
-import Facebook from '../../assets/Brands/Facebook.png';
-import Shopee from '../../assets/Brands/Shopee.png';
-import NTU from '../../assets/Brands/NTU.png';
-import Brands from '../../assets/Brands/Brands.png';
+// import ByteDance from '../../assets/Brands/ByteDance.png';
+// import Binance from '../../assets/Brands/Binance.png';
+// import DBS from '../../assets/Brands/DBS.png';
+// import NUS from '../../assets/Brands/NUS.png';
+// import Facebook from '../../assets/Brands/Facebook.png';
+// import Shopee from '../../assets/Brands/Shopee.png';
+// import NTU from '../../assets/Brands/NTU.png';
+// import Brands from '../../assets/Brands/Brands.png';
+import Brands from '../../public/images/Brands.png';
 import Switchup from '../../assets/Brands/Switchup.png';
 import Google from '../../assets/Brands/Google.png';
 import Approved from '../../assets/Brands/Approved.png';
@@ -30,7 +29,10 @@ function Statistics() {
                 <h2>Teachers <span>from...</span></h2>
                 <div className={styles.brandsContainer}>
                     <div className={styles.brandSlider}>
-                        <Image src={Brands} className={styles.brandImage} />
+                        <Image
+                            src={Brands}
+                            className={styles.brandImage}
+                        />
                     </div>
                 </div>
 
