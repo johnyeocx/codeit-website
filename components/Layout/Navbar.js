@@ -94,7 +94,11 @@ function Navbar() {
                                 />
                                 <NavButton text='Courses'
                                     onClick={(e) => {
-                                        scrollToElement("#home-courses-container")
+                                        if (router.pathname == "/") {
+                                            scrollToElement("#home-courses-container")
+                                        } else {
+                                            router.push('/?section=courses')
+                                        }
                                     }}
                                 />
                                 <div
@@ -178,7 +182,7 @@ function Navbar() {
                             </div>
                         </Link>
 
-                        <Link href="/courses">
+                        <Link href="/?section=courses">
                             <div className={styles.menuItem}>
                                 <MdCastForEducation style={{
                                     fontSize: '30px',
@@ -187,7 +191,14 @@ function Navbar() {
                                 }}
                                     color="#7C81F7"
                                 />
-                                <a onClick={() => setMenuOpen(false)}>Courses</a>
+                                <a onClick={() => {
+                                    if (router.pathname == "/") {
+                                        scrollToElement("#home-courses-container")
+                                    } else {
+                                        router.push('/?section=courses')
+                                    }
+                                    setMenuOpen(false)
+                                }}>Courses</a>
                             </div>
                         </Link>
 
