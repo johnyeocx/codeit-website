@@ -129,7 +129,7 @@ export const ciEssentials = {
     },
     overview: {
         text: (dimensions) => <p>
-            <span>CodeIT Essentials</span> is a crucial checkpoint in every programmer's journey.
+            <span>CodeIT Essentials</span> is a crucial checkpoint in every programmer&apos;s journey.
             {
                 dimensions.width < breakpoints.tablet ? (
                     <><br /> <br /></>
