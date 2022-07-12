@@ -8,16 +8,16 @@ import CourseUSP from '../../components/Courses/03_CourseUSP';
 import Curriculum from '../../components/Courses/04_Curriculum';
 import CourseRegister from '../../components/Courses/05_CourseRegister';
 import CourseTeachers from '../../components/Courses/06_CourseTeachers';
-import { ciIntro } from '../../components/Courses/courseData';
+import { ciEssentials } from '../../components/Courses/courseData';
 import NavButton from '../../components/Layout/NavButton/NavButton';
 
 function Intro() {
     const value = useContext(AppContext);
     let { bgColor } = value.state;
     let { setBgColor } = value;
-
-    const bgPrimary = "#FFF9F8"
-    const bgSecondary = "#FDECE8"
+    const teachersRef = useRef(null);
+    const bgPrimary = "#FCFDFF"
+    const bgSecondary = "#EBF8FF"
 
     const scrollToElement = (id) => {
         let nextSection = document.querySelector(id);
@@ -29,7 +29,7 @@ function Intro() {
     }
 
     useEffect(() => {
-        setBgColor(bgPrimary)
+        setBgColor("#FCFDFF")
     }, [])
 
     const buttons = [
@@ -49,8 +49,8 @@ function Intro() {
             id="course-details"
         >
 
-            <CourseLanding coursePath={ciIntro.coursePath} landingData={ciIntro.landing} />
-            <CourseIntro bgSecondary={bgSecondary} overview={ciIntro.overview} title={ciIntro.title} />
+            <CourseLanding coursePath={ciEssentials.coursePath} landingData={ciEssentials.landing} />
+            <CourseIntro bgSecondary={bgSecondary} overview={ciEssentials.overview} title={ciEssentials.title} />
 
             <div className={styles.contentContainer}>
                 <div className={styles.sidebar}>
@@ -72,14 +72,14 @@ function Intro() {
                     </div>
                 </div>
                 <div className={styles.mainContent}>
-                    <CourseUSP title={ciIntro.title} benefits={ciIntro.benefits} />
+                    <CourseUSP title={ciEssentials.title} benefits={ciEssentials.benefits} />
                     <Curriculum
-                        prerequisites={ciIntro.prerequisites}
-                        curriculum={ciIntro.curriculum}
-                        brochure={ciIntro.brochure}
+                        prerequisites={ciEssentials.prerequisites}
+                        curriculum={ciEssentials.curriculum}
+                        brochure={ciEssentials.brochure}
                     />
-                    <CourseRegister signup={ciIntro.signup} coursePath={ciIntro.coursePath} />
-                    <CourseTeachers bgSecondary={bgSecondary} teachers={ciIntro.teachers} />
+                    <CourseRegister signup={ciEssentials.signup} coursePath={ciEssentials.coursePath} />
+                    <CourseTeachers bgSecondary={bgSecondary} teachers={ciEssentials.teachers} />
                 </div>
             </div>
 

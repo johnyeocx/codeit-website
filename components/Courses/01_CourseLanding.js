@@ -6,7 +6,7 @@ import IntroLanding from '../../assets/Courses/Intro/Landing.jpg';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-function CourseLanding() {
+function CourseLanding({ landingData, coursePath }) {
     const value = useContext(AppContext);
     let { bgColor } = value.state;
     let { setBgColor } = value;
@@ -25,13 +25,11 @@ function CourseLanding() {
         <div className={styles.mainContainer}>
             <div className={styles.left}>
                 <div className={styles.containerTop}>
-                    <h1>CodeIT Intro</h1>
-                    <h4>Online | 3 weeks</h4>
-                    <p>
-                        Afraid of those months long full time bootcamps?
-                        Want a hassle and commitment free entry into the world of programming?
-                        <span> CodeIT Intro</span> was made for you.
-                    </p>
+                    <h1>{landingData.title}</h1>
+                    <h4>{landingData.info}</h4>
+
+                    {landingData.description()}
+
                 </div>
                 <div className={styles.containerBottom}>
                     <div className={styles.btnContainer}>
@@ -40,7 +38,7 @@ function CourseLanding() {
                             type="primary"
                             onClick={() => router.push({
                                 pathname: '/register',
-                                query: { course: 'intro' }
+                                query: { course: coursePath }
                             })}
                         />
                     </div>

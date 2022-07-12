@@ -2,49 +2,21 @@ import React, { useState } from 'react';
 import styles from '../../styles/Courses/Curriculum.module.scss'
 import { TiChevronLeft } from 'react-icons/ti';
 import { BiDownload } from 'react-icons/bi';
-import IntroBrochure from '../../public/assets/IntroBrochure.pdf';
 
-function Curriculum() {
-    const prerequisites = [
-        // {
-        //     title: "None. That's right, we welcome those with no experience!",
-        //     topics: []
-        // }
-        // ,
-        {
-            title: "1. Programming Fundamentals",
-            topics: [
-                `${`\u00a0\u00a0\u00a0`} - Variables & Data Types`,
-                `${`\u00a0\u00a0\u00a0`} - Lists & Loops`,
-                `${`\u00a0\u00a0\u00a0`} - Functions & Modules`,
-            ]
-        },
-        {
-            title: "2. Basic Data Structures & Algorithms",
-            topics: [
-                `${`\u00a0\u00a0\u00a0`} - Recursion`,
-                `${`\u00a0\u00a0\u00a0`} - Linear & Binary Search`,
-                `${`\u00a0\u00a0\u00a0`} - Insertion & Merge Sort`,
-                `${`\u00a0\u00a0\u00a0`} - Linked Lists`,
-                `${`\u00a0\u00a0\u00a0`} - Binary Search Trees`,
-            ]
-        }
-    ]
+function Curriculum({ prerequisites, curriculum, brochure }) {
+    // const prerequisites = [
+    //     // {
+    //     //     title: "None. That's right, we welcome those with no experience!",
+    //     //     topics: []
+    //     // }
+    //     // ,
+    //     {
 
-    const curriculum = [
-        {
-            title: "W1: Variables & Conditionals",
-            description: "Ever wondered how when you login to Facebook, they know whether you’ve entered the correct password? That’s what you will learn here."
-        },
-        {
-            title: "W2: Lists & Loops",
-            description: "Organisation is king. Python lists are to computer data what files are to paper and bookshelves are to books. Here, you will learn how to properly structure data in your programs!"
-        },
-        {
-            title: "W3: Functions & Files",
-            description: "Don't repeat yourself! Dive into a core tenet of programming in this lesson and learn how to reuse code to increase readability / conciseness of your program."
-        },
-    ]
+    // ]
+
+    // const curriculum = [
+
+    // ]
 
     const [selected, setSelected] = useState(null);
 
@@ -92,6 +64,7 @@ function Curriculum() {
                                     section.topics.map((topic, topicIndex) => (
                                         <p
                                             key={topicIndex}
+                                            style={{ paddingLeft: 30 }}
                                         >{topic}</p>
                                     ))
                                 }
@@ -140,7 +113,7 @@ function Curriculum() {
 
                 <a
                     className={styles.downloadContainer}
-                    href={IntroBrochure}
+                    href={brochure}
                     rel="noreferrer"
                     target="_blank"
                 >

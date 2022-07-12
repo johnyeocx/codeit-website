@@ -20,5 +20,12 @@ export const courseReviews = [
         image: Anders,
         course: "Advanced",
         class: "May 2022"
+    },
+    {
+        name: "Neena",
+        review: "This was an amazing course with lots of wholesome learning experiences. Tutors were really helpful and accomodating to my doubts and ensured I understood my concepts clearly. I also loved the way the concepts were taught with lots of examples and practices towards the end of the session. Overall it was an amazing experience where I got to hone my skills in coding. I would definitely recomment this course to those interested in coding and would be a great head start for those looking to take coding related courses in university!👍🏽😊",
+        image: Anders,
+        course: "Essentials",
+        class: "Jan 2021"
     }
 ]

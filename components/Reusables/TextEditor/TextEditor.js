@@ -4,6 +4,7 @@ import spinner from './spinner.svg';
 import React, { useState, useEffect } from 'react'
 import RippleButton from "../RippleButton/RippleButton";
 import styles from '../../../styles/Components/TextEditor.module.scss'
+import rippleStyles from '../../../styles/Components/RippleButton.module.scss';
 import { endpoint } from "../../../api/api";
 
 function TextEditor() {
@@ -50,7 +51,7 @@ function TextEditor() {
     }
 
     function compile() {
-        // setLoading(true);
+        setLoading(true);
         if (userCode === ``) {
             return
         }
@@ -105,14 +106,36 @@ function TextEditor() {
             }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <h4 style={{ margin: 0 }}>Output: </h4>
-                    {userOutput.split('\n').map((line, index) => (
+                    {userOutput ? userOutput.split('\n').map((line, index) => (
                         <p key={index}>{line}</p>
-                    ))}
+                    )) : (
+                        <p>{ }</p>
+                    )
+                    }
                 </div>
                 <div className={styles.runButtonContainer} >
-                    <RippleButton text="Run" primary
+                    {/* <RippleButton text="Run" primary
                         onClick={(e) => compile()}
-                    />
+                    /> */}
+                    <button
+                        className={
+                            loading ?
+                                `${rippleStyles.rippleButtonSubmitting} ${rippleStyles.rpPrimary}` :
+                                `${rippleStyles.rippleButton} ${rippleStyles.rpPrimary}`
+                        }
+                        onClick={() => compile()}
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
+                        {
+                            loading ? (
+                                <div className="spinner">Hello</div>
+
+                            ) : (
+                                <>Run</>
+                            )
+                        }
+
+                    </button>
                 </div>
 
             </div>

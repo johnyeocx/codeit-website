@@ -53,13 +53,14 @@
     }
 
     .benefitHeader .benefitIcon {
-        width: 27px;
+        min-width: 27px;
+        max-width: 27px;
         margin-right: 20px;
         margin-bottom: 3px;
     }
 
     .benefitHeader h2 {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     p {

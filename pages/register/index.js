@@ -50,9 +50,6 @@ function Register() {
     const [transformSpeed, setTransformSpeed] = useState(0.2);
 
 
-    useEffect(() => {
-
-    }, [])
 
     const checkDetailsInput = () => {
         let errors = []
@@ -128,7 +125,7 @@ function Register() {
             "advanced": 2
         }
 
-        if (course && courseMap[course]) {
+        if (course && courseMap[course] != undefined) {
             setSelectedCourse(courseMap[course])
             setSelectedPage(2)
         }

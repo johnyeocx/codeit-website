@@ -63,7 +63,7 @@ function Reviews() {
                 </div>
             </section>
 
-            <div className={styles.containerBottom}>
+            {/* <div className={styles.containerBottom}>
                 <div className={styles.rippleButtonContainer}>
                     <RippleButton
                         text="See All"
@@ -71,7 +71,7 @@ function Reviews() {
                         onClick={() => router.push('our-team')}
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -2,12 +2,15 @@ import React from 'react';
 import styles from '../../styles/Courses/CourseTeachers.module.scss';
 import Image from 'next/image';
 import RippleButton from '../Reusables/RippleButton/RippleButton';
+import { useRouter } from 'next/router';
 
-function CourseTeachers({ teachersRef, teachers, bgColor }) {
+function CourseTeachers({ bgSecondary, teachersRef, teachers, bgColor }) {
+    const router = useRouter();
     return (
         <div
             className={styles.container}
             id="course-teachers"
+            style={{ backgroundColor: bgSecondary }}
         >
             <div className={styles.container1}>
                 <h1>Meet your teachers</h1>
@@ -46,7 +49,7 @@ function CourseTeachers({ teachersRef, teachers, bgColor }) {
             </div >
             <div className={styles.container3}>
                 <div className={styles.btnContainer}>
-                    <RippleButton text="See More" />
+                    <RippleButton text="See More" onClick={() => router.push('/our-team')} />
                 </div>
             </div>
         </div >

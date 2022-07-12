@@ -5,13 +5,14 @@ import CourseCard from './CourseCard/CourseCard';
 import PlayButton from '../../assets/Home/Courses/PlayButton.svg'
 import NextButton from '../../assets/Home/Courses/NextButton.svg'
 import ForwardButton from '../../assets/Home/Courses/ForwardButton.svg'
+import { ciEssentials, ciIntro } from '../Courses/courseData';
 
 const courses = [
     {
         title: "CodeIT Introduction",
         subtitle: "For those with",
         emphasis: "no experience",
-        upcoming: "TBC",
+        upcoming: ciIntro.signup.nextRun.date,
         length: "3 Weeks",
         color: "#FF9D87",
         icon: PlayButton,
@@ -21,7 +22,7 @@ const courses = [
         title: "CodeIT Essentials",
         subtitle: "For those with",
         emphasis: "some experience",
-        upcoming: "TBC",
+        upcoming: ciEssentials.signup.nextRun.date,
         length: "6 Weeks",
         color: "#75B8FF",
         icon: NextButton,
@@ -31,7 +32,7 @@ const courses = [
         title: "CodeIT Advanced",
         subtitle: "For those with",
         emphasis: "a lot experience",
-        upcoming: "July 8th - August 13th",
+        upcoming: "TBC",
         length: "6 Weeks",
         color: "#8F90F7",
         icon: ForwardButton,

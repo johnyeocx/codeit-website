@@ -14,7 +14,6 @@
 
 .container1{
     width: 100%;
-    
 
     h1 {
         color: $violet;
@@ -27,10 +26,19 @@
         height: 3px;
         background-color: $violet;
     }
+
+    @media (min-width: $breakpoint-tablet) {
+        @include flexCenter;
+        flex-direction: column;
+        div {
+            margin: 0;
+        }
+    }
 }
 
 .container2 {
     width: 100%;
+    max-width: 500px;
 
     p {
         font-size: 14px;
@@ -112,14 +120,14 @@
     width: 100%;
     @include flexCenter;
 
-    @media (min-width: $breakpoint-tablet) {
-        justify-content: flex-start;
-    }
+    // @media (min-width: $breakpoint-tablet) {
+    //     justify-content: flex-start;
+    // }
 
     .btnContainer {
         position: relative;
         height: 50px;
         width: 100%;
-        max-width: 550px;
+        max-width: 500px;
     }
 }

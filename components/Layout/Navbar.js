@@ -30,7 +30,10 @@ function Navbar() {
     return (
         <>
             <div id={styles.navContainer}
-                style={{ backgroundColor: bgColor }}
+                style={mobileContactModalOpen ?
+                    { backgroundColor: 'transparent' } :
+                    { backgroundColor: bgColor }
+                }
             >
                 <div className={styles.navLeft}
                     style={isMobile ? {
@@ -125,7 +128,6 @@ function Navbar() {
             </div>
             {
                 isMobile &&
-
                 <>
                     <MobileContactModal
                         modalOpen={mobileContactModalOpen}
@@ -169,7 +171,7 @@ function Navbar() {
                             </div>
                         </Link>
 
-                        <Link href="/team">
+                        <Link href="/our-team">
                             <div className={styles.menuItem}>
                                 <RiTeamFill style={{
                                     fontSize: '30px',

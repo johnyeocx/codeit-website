@@ -6,7 +6,8 @@ import { MdOutlineAttachMoney } from 'react-icons/md';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-function CourseRegister() {
+function CourseRegister({ signup, coursePath }) {
+    const router = useRouter();
     return (
         <div id="course-signup" className={styles.container}>
             <div className={styles.container1}>
@@ -25,11 +26,11 @@ function CourseRegister() {
                             <tbody>
                                 <tr>
                                     <td>Date</td>
-                                    <td>Aug 13 - Aug 27</td>
+                                    <td>{signup.nextRun.date}</td>
                                 </tr>
                                 <tr>
                                     <td>Time</td>
-                                    <td>9:00am - 12:00pm</td>
+                                    <td>{signup.nextRun.time}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -46,22 +47,21 @@ function CourseRegister() {
                             <tbody>
                                 <tr>
                                     <td>Student</td>
-                                    <td>250SGD</td>
+                                    <td>{`${signup.pricing.student}SGD`}</td>
                                 </tr>
                                 <tr>
                                     <td>Public</td>
-                                    <td>500SGD</td>
+                                    <td>{`${signup.pricing.public}SGD`}</td>
                                 </tr>
                             </tbody>
-
                         </table>
                     </div>
                 </div>
 
                 <p>
                     <span>Note:</span> This course is approved under the IMDA iPrep Subsidy. All computing students in Singapore universities are
-                    eligible to claim these subsidies. Contact us for more info.
-                    <Link href="/"><a> Learn More Here</a></Link>
+                    eligible to claim these subsidies. All who are eligible will receive a <b>500SGD reimbursement</b> of the course under this scheme.
+                    {/* <Link href="/"><a> Learn More Here</a></Link> */}
                 </p>
             </div>
             <div className={styles.container3}>
@@ -69,6 +69,7 @@ function CourseRegister() {
                     <RippleButton
                         text="Register Now"
                         type="primary"
+                        onClick={() => router.push(`/register?course=${coursePath}`)}
                     />
                 </div>
             </div>
