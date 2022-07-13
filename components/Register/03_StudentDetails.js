@@ -149,9 +149,9 @@ function StudentDetails({
                             } : {}
                         }>
                             Please agree to our <a
-                                // href={window.URL.createObjectURL(tncFile)}
                                 href={TnCFile}
                                 target="_blank"
+                                rel="noreferrer"
                                 style={{ textDecoration: "underline" }}>
                                 Terms & Conditions</a> before registering
                         </p>
