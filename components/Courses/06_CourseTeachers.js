@@ -34,12 +34,11 @@ function CourseTeachers({ bgSecondary, teachersRef, teachers, bgColor }) {
                                     />
                                 </div>
 
-                                <div className={styles.teacherDetails}
-                                    style={{ marginLeft: 20 }}
-                                >
+                                <div className={styles.teacherDetails}>
                                     <h3>{teacher.name}</h3>
                                     <h4>{teacher.company}</h4>
                                     <h4>{teacher.degree}</h4>
+                                    <h4>{teacher.school}</h4>
                                 </div>
 
                             </div>

@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
+import AppContext from '../../AppContext';
 import styles from '../../styles/Team/Team.module.scss';
 
+
 function About() {
+    const value = useContext(AppContext);
+    let { isMobile, dimensions } = value.state;
+    let { bgColor } = value.state;
+    let { setBgColor } = value;
+
+    useEffect(() => {
+        setBgColor("#FFFDFD")
+    }, [])
+
     return (
         <div className={styles.container}
             style={{

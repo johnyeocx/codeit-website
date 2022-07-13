@@ -23,16 +23,26 @@ function CourseRegister({ signup, coursePath }) {
                     </div>
                     <div>
                         <table className={styles.scheduleTable}>
-                            <tbody>
-                                <tr>
-                                    <td>Date</td>
-                                    <td>{signup.nextRun.date}</td>
-                                </tr>
-                                <tr>
-                                    <td>Time</td>
-                                    <td>{signup.nextRun.time}</td>
-                                </tr>
-                            </tbody>
+                            {signup.nextRun ? (
+                                <tbody>
+
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>{signup.nextRun.date}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time</td>
+                                        <td>{signup.nextRun.time}</td>
+                                    </tr>
+                                </tbody>
+                            ) : (
+                                <tbody>
+                                    <tr>
+                                        <td style={{ border: 'none' }}>Coming Soon...</td>
+                                    </tr>
+                                </tbody>
+                            )}
+
                         </table>
                     </div>
                 </div>
@@ -47,11 +57,15 @@ function CourseRegister({ signup, coursePath }) {
                             <tbody>
                                 <tr>
                                     <td>Student</td>
-                                    <td>{`${signup.pricing.student}SGD`}</td>
+                                    <td><strike style={{
+                                        marginRight: '10px'
+                                    }}>499SGD</strike>{`${signup.pricing.student}SGD`}</td>
                                 </tr>
                                 <tr>
                                     <td>Public</td>
-                                    <td>{`${signup.pricing.public}SGD`}</td>
+                                    <td><strike style={{
+                                        marginRight: '10px'
+                                    }}>999SGD</strike>{`${signup.pricing.public}SGD`}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,7 +75,6 @@ function CourseRegister({ signup, coursePath }) {
                 <p>
                     <span>Note:</span> This course is approved under the IMDA iPrep Subsidy. All computing students in Singapore universities are
                     eligible to claim these subsidies. All who are eligible will receive a <b>500SGD reimbursement</b> of the course under this scheme.
-                    {/* <Link href="/"><a> Learn More Here</a></Link> */}
                 </p>
             </div>
             <div className={styles.container3}>

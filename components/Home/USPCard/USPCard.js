@@ -21,11 +21,11 @@ function USPCard({
                 </p>
             </div>
 
-            <div className={styles.cardBottom}>
+            {/* <div className={styles.cardBottom}>
                 <button
                     onClick={onClick}
                 >Learn More</button>
-            </div>
+            </div> */}
 
         </div>
     )

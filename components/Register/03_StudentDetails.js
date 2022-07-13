@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { FormControl, InputLabel } from '@mui/material';
 import { registerRequest } from '../../api/api';
 import { format } from 'date-fns';
+import TnCFile from '../../public/assets/TnC.pdf'
 
 
 function StudentDetails({
@@ -149,6 +150,7 @@ function StudentDetails({
                         }>
                             Please agree to our <a
                                 // href={window.URL.createObjectURL(tncFile)}
+                                href={TnCFile}
                                 target="_blank"
                                 style={{ textDecoration: "underline" }}>
                                 Terms & Conditions</a> before registering

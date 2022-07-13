@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>CodeIT Academy</title>
         <link rel="icon" href="/logo.png" />
-        {/* <meta property="og:title" content="Website Title" key="title" /> */}
+        <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
       </Head>
       <Layout>
         <Component {...pageProps} />
