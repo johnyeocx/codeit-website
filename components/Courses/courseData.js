@@ -18,6 +18,7 @@ import introStyles from '../../styles/Courses/CourseIntro.module.scss';
 
 import IntroSVG from '../../assets/Courses/IntroSVG.svg';
 import EssentialsSVG from '../../assets/Courses/EssentialsSVG.svg';
+import AdvancedSVG from '../../assets/Courses/AdvancedSVG.svg';
 
 
 import { breakpoints } from '../constants';
@@ -270,7 +271,7 @@ export const ciAdvanced = {
             Here, you will learn about advanced (and famous) data structures & algorithms like heaps and graphs that will culminate in a holistic and thorough knowledge on this area.
         </p>,
         graduates: 73,
-        svg: () => <EssentialsSVG className={introStyles.introSvg} />
+        svg: () => <AdvancedSVG className={introStyles.introSvg} />
     },
     benefits: [
         {

@@ -9,7 +9,7 @@ import { ciEssentials, ciIntro } from '../Courses/courseData';
 
 const courses = [
     {
-        title: "CodeIT Introduction",
+        title: "CodeIT Intro",
         subtitle: "For those with",
         emphasis: "no experience",
         upcoming: ciIntro.signup.nextRun.date,
