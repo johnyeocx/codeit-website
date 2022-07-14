@@ -1,18 +1,35 @@
 import React from 'react'
 import styles from '../../../styles/Components/NavButton.module.scss'
-
 import Link from 'next/link'
 
-function NavButton({ text, onClick, style, children }) {
+function NavButton({ isLink, href, text, onClick, style, children }) {
     return (
-        <div
-            className={styles.navButtonContainer}
-            style={style}
-        >
-            <button onClick={onClick} className={styles.navButton}>
-                {text}
-            </button>
-        </div>
+        <>
+            {isLink ?
+                (
+                    <div
+                        className={styles.navButtonContainer}
+                        style={style}
+                    >
+                        <Link href={href}>
+                            <a className={styles.navButton}>
+                                {text}
+                            </a>
+                        </Link>
+                    </div>
+                ) : (
+                    <div
+                        className={styles.navButtonContainer}
+                        style={style}
+                    >
+                        <button onClick={onClick} className={styles.navButton}>
+                            {text}
+                        </button>
+                    </div>
+                )
+            }
+        </>
+
     )
 }
 

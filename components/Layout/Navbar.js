@@ -81,19 +81,16 @@ function Navbar() {
                         ) : (
                             <>
                                 <NavButton text='Home'
-                                    onClick={(e) => {
-                                        router.push('/')
-                                    }}
+                                    isLink
+                                    href="/"
                                 />
                                 <NavButton text='About Us'
-                                    onClick={(e) => {
-                                        router.push('/about')
-                                    }}
+                                    isLink
+                                    href="/about"
                                 />
                                 <NavButton text='Our Team'
-                                    onClick={(e) => {
-                                        router.push('/our-team')
-                                    }}
+                                    isLink
+                                    href="/our-team"
                                 />
                                 <NavButton text='Courses'
                                     onClick={(e) => {
@@ -117,9 +114,8 @@ function Navbar() {
                                     <ContactModal />
                                 </div>
                                 <NavButton text='Register Now'
-                                    onClick={(e) => {
-                                        router.push('/register')
-                                    }}
+                                    isLink
+                                    href="/register"
                                 />
                             </>
                         )

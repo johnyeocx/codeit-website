@@ -142,11 +142,10 @@ function DetailsInput({
                         // error={error.findIndex((elem) => elem.type === "email") != -1}
 
                         onKeyDown={(e) => {
-                            console.log(e.key)
                             if (e.key === 'Tab') {
                                 handleNextClicked();
+                                e.preventDefault();
                             }
-                            e.preventDefault();
                         }}
                         required={false}
                         index={6}
