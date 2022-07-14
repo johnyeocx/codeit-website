@@ -24,7 +24,12 @@ $bgColor: lighten($salmon, 20%);
     }
 
     h1 {
+        width: 100%;
         text-align: start;
+
+        @media (min-width: $breakpoint-tablet) {
+            text-align: center;
+        }
     }
 
     // div {

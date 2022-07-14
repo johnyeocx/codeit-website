@@ -83,6 +83,9 @@ function Navbar() {
                                 <NavButton text='Home'
                                     isLink
                                     href="/"
+                                    onClick={() => {
+                                        if (router.pathname == '/') scrollToElement("#home-landing")
+                                    }}
                                 />
                                 <NavButton text='About Us'
                                     isLink
@@ -93,11 +96,11 @@ function Navbar() {
                                     href="/our-team"
                                 />
                                 <NavButton text='Courses'
+                                    isLink
+                                    href="/?section=courses"
                                     onClick={(e) => {
                                         if (router.pathname == "/") {
                                             scrollToElement("#home-courses-container")
-                                        } else {
-                                            router.push('/?section=courses')
                                         }
                                     }}
                                 />
@@ -150,7 +153,10 @@ function Navbar() {
                                 }}
                                     color="#7C81F7"
                                 />
-                                <a onClick={() => setMenuOpen(false)}>Home</a>
+                                <a onClick={() => {
+                                    if (router.pathname == '/') scrollToElement("#home-landing")
+                                    setMenuOpen(false)
+                                }}>Home</a>
                             </div>
                         </Link>
 

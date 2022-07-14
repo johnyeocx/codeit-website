@@ -16,22 +16,27 @@
   justify-content: center;
 
   @media (min-width: $breakpoint-laptop) {
+    display: flex;
     width: 50%;
-    padding: 5px 3% 5px 8%;
+    padding: 5px 3% 0px 8%;
   }
 
   .container1 {
     @include flexCenter;
     justify-content: left;
     height: 20%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
 
     h1 {
       font-size: 32px;
-
       @media (min-width: $breakpoint-tablet) {
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
     }
 
@@ -42,9 +47,9 @@
   
   .container2 {
     @include flexCenter;
-    height: 30%;
     width: 100%;
-    margin-bottom: 20px;
+    height: 25%;
+    margin-bottom: 40px;
 
     @media (min-width: $breakpoint-laptop) {
       width: 100%;
@@ -56,10 +61,12 @@
       width: 60%;
       font-size: 0.95rem;
       
-
+      p:nth-child(1) {
+        margin-bottom: 20px;
+      }
       @media (min-width: $breakpoint-tablet) {
         width: 100%;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
 

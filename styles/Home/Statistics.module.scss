@@ -43,19 +43,8 @@ $paddingPercentage: 8%;
 
     @media (min-width: $breakpoint-tablet) {
         padding: 0px $paddingPercentage;
+        text-align: center;
     }
-
-    // div{
-    //     transform: translateX(35px);
-    //     left: 2px;
-    //     @include headerLine(100px);
-
-    //     @media (min-width: $breakpoint-tablet) {
-    //         left: 10%;
-    //         @include headerLine(150px);
-    //     }
-        
-    // }
 }
 
 .teachersContainer {

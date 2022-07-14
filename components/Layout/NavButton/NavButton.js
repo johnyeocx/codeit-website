@@ -12,7 +12,7 @@ function NavButton({ isLink, href, text, onClick, style, children }) {
                         style={style}
                     >
                         <Link href={href}>
-                            <a className={styles.navButton}>
+                            <a onClick={onClick ? () => onClick() : null} className={styles.navButton}>
                                 {text}
                             </a>
                         </Link>

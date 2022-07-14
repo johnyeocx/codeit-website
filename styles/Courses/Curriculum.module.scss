@@ -20,16 +20,24 @@
     margin-bottom: 30px;
 
     h1 {
-        color: $violet;
-        margin-bottom: 10px;
+        @include courseHeader(start)
     }
 
     div {
         width: 100px;
         margin-right: 5px;
-        width: 150px;
+        width: 20%;
         height: 3px;
         background-color: $violet;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+        @include flexCenter;
+        // flex-direction: column;
+        div {
+            margin: 0;
+            width: 100px;
+        }
     }
 
 }
@@ -57,9 +65,14 @@
 
         h2 {
             font-size: 17px;
+            text-align: start;
             color: white;
             font-weight: 600;
             margin: 10px 0px;
+
+            @media (max-width: $breakpoint-thin) {
+                font-size: 15px;
+            }
         }
 
         .chevron {

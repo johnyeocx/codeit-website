@@ -43,18 +43,6 @@
         width: 150px;
     }
 
-    .titleContainer div {
-        width: 100px;
-        height: 2px;
-        border-radius: 10px;
-        background-color: $dark-blue;
-    }
-    
-    h1{
-        font-size: 25px;
-        color: $dark-blue;
-    }
-
     .titleContainer {
         width: 70%;
         display: flex;
@@ -63,7 +51,19 @@
 
         h1 {
             text-align: end;
-            font-size: 21px;
+            color: $dark-blue;
+            font-size: 25px;
+            font-size: 6vw;
+            line-height: 150%;
+            // background-color: blue;
+        }
+
+        div {
+            // width: 100px;
+            width: 30%;
+            height: 2px;
+            border-radius: 10px;
+            background-color: $dark-blue;
         }
 
         @media (min-width: $breakpoint-tablet) {

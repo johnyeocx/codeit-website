@@ -7,6 +7,7 @@ $breakpoint-mobile: 481px;
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 950px;
 $breakpoint-desktop: 1025px;
+$breakpoint-thin: 380px;
 
 $navHeight: 80px;
 $pageHeight: calc(100vh - 80px);
@@ -46,4 +47,14 @@ $homeBackground: #FFFDFD;
     background-color: $violet;
     height: 3px;
     border-radius: 1.5px;
+}
+
+@mixin courseHeader($text-align) {
+    color: $violet;
+    margin-bottom: 10px;
+    text-align: $text-align;
+
+    @media(max-width: $breakpoint-thin) {
+        font-size: 25px;
+    }
 }

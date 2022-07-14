@@ -16,13 +16,12 @@
     width: 100%;
 
     h1 {
-        color: $violet;
-        margin-bottom: 10px;
+        @include courseHeader(start)
     }
 
     div {
         margin-left: 5px;
-        width: 150px;
+        width: 30%;
         height: 3px;
         background-color: $violet;
     }

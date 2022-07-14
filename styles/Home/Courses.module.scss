@@ -25,16 +25,14 @@
 
 
     h1 {
+        width: 100%;
         text-align: end;
         margin-bottom: 10px;
+        
+        @media (min-width: $breakpoint-tablet) {
+            text-align: center;
+        }
     }
-
-    
-
-    // div {
-    //     @include headerLine(150px);
-    //     right: 1px;
-    // }
 }
 
 .mainContainer {

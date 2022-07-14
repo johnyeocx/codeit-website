@@ -23,7 +23,7 @@ function Landing() {
     const router = useRouter()
 
     return (
-        <div className={styles.landingContainer}>
+        <div className={styles.landingContainer} id="home-landing">
             <div className={styles.containerLeft}>
                 <div className={styles.container1}>
                     <h1>
@@ -35,8 +35,9 @@ function Landing() {
 
                 <div className={styles.container2}>
                     <div className={styles.left}>
-                        <p><span>80%</span> of students fail to self-learn programming...</p>
-                        <br />
+                        <p><span>80%</span> of students fail to self-learn programming.
+                        </p>
+                        {/* <br /> */}
                         <p>Be the <span>20%.</span></p>
                     </div>
                     {isMobile && (

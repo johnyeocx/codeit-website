@@ -29,7 +29,9 @@ function CourseTeachers({ bgSecondary, teachersRef, teachers, bgColor }) {
                                 <div className={styles.imgContainer}>
                                     <Image
                                         objectFit='cover'
-                                        layout="fill"
+                                        layout="fixed"
+                                        width={100}
+                                        height={130}
                                         src={teacher.image}
                                     />
                                 </div>
