@@ -4,8 +4,11 @@ import RippleButton from '../Reusables/RippleButton/RippleButton';
 import SuccessSVG from './success.svg';
 import { useRouter } from 'next/router';
 
-function SuccessPage({ selectedPage }) {
+function SuccessPage({ selectedPage, selectedCourse }) {
+
     const router = useRouter();
+    const courseMap = ["CodeIT Intro", "CodeIT Essentials", "CodeIT Advanced"]
+
     return (
 
         <div className={styles.container}>
@@ -20,7 +23,7 @@ function SuccessPage({ selectedPage }) {
 
                         </div>
                         <div className={styles.containerMiddle}>
-                            <h5>You have successfully registered for {`CodeIT Advanced`}</h5>
+                            <h5>You have successfully registered for {courseMap[selectedCourse]}</h5>
                             <p>
                                 Thank you for registering with us! We will contact you shortly to answer any queries you may have about the course and confirm your enrolment.
 

@@ -58,12 +58,12 @@ export const ciIntro = {
     benefits: [
         {
             title: 'Duration',
-            description: 'Time is money. In just three (short & sweet) weeks, you will gain the skills necessary to combine your programming skills with everyday life problems',
+            description: 'Time is money. In just 3 (short & sweet) weeks, you will gain the skills necessary to combine your programming skills with everyday life problems!',
             icon: () => <TimeIcon className={uspStyles.benefitIcon} />,
         },
         {
             title: 'Expertise',
-            description: 'Coming from both educational institutions and top tech firms, our teachers bring the best of both worlds to teach you the best knowledge, in the best way',
+            description: 'Coming from both educational institutions and top tech firms, our teachers bring the best of both worlds to teach you the best knowledge, in the best way.',
             icon: () => <ExpertIcon className={uspStyles.benefitIcon} />,
         },
         {

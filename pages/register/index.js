@@ -202,6 +202,7 @@ function Register() {
                     />
                     <SuccessPage
                         selectedPage={page}
+                        selectedCourse={selectedCourse}
                     />
 
                 </div>

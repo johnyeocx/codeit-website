@@ -2,6 +2,7 @@ import JohnDoe from '../../../assets/Home/Reviews/JohnDoe.jpg';
 import JaneDoe from '../../../assets/Home/Reviews/JaneDoe.jpg';
 import Anders from '../../../assets/Home/Reviews/Anders.jpeg';
 import JasonChew from '../../../assets/Home/Reviews/JasonChew.jpeg';
+import Neena from '../../../assets/Home/Reviews/Neena.jpg';
 // import JohnDoe from '../../../public/assets/reviews/JohnDoe.jpg';
 // import JaneDoe from '../../../public/assets/reviews/JaneDoe.jpg';
 
@@ -24,7 +25,7 @@ export const courseReviews = [
     {
         name: "Neena",
         review: "This was an amazing course with lots of wholesome learning experiences. Tutors were really accomodating to my doubts and ensured I understood my concepts clearly. I also loved the way the concepts were taught with lots of examples. Overall it was an amazing experience where I got to hone my skills in coding. I would definitely recommend this course to those interested in coding!👍🏽😊",
-        image: Anders,
+        image: Neena,
         course: "Essentials",
         class: "Jan 2021"
     }

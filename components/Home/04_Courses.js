@@ -31,7 +31,7 @@ const courses = [
     {
         title: "CodeIT Advanced",
         subtitle: "For those with",
-        emphasis: "a lot experience",
+        emphasis: "a lot of experience",
         upcoming: "TBC",
         length: "6 Weeks",
         color: "#8F90F7",

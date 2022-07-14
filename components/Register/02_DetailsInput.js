@@ -92,7 +92,9 @@ function DetailsInput({
                         <LocalizationProvider
                             dateAdapter={AdapterDateFns}>
                             <MobileDatePicker
-
+                                inputRef={(ref) => {
+                                    if (inputRefs) inputRefs.current[5] = ref
+                                }}
                                 label="Date of Birth"
                                 inputFormat="dd/MM/yyyy"
                                 value={studentDetails.birthDate ? studentDetails.birthDate : new Date()}
@@ -106,13 +108,7 @@ function DetailsInput({
                                         required
                                         size='medium'
 
-                                        onKeyDown={(e) => {
-                                            console.log(e.key)
-                                            if (e.key === 'Tab') {
-                                                handleNextClicked();
-                                            }
-                                            e.preventDefault();
-                                        }}
+
 
                                         style={{
                                             marginLeft: '20px',
@@ -144,6 +140,14 @@ function DetailsInput({
 
                     <RegisterInput
                         // error={error.findIndex((elem) => elem.type === "email") != -1}
+
+                        onKeyDown={(e) => {
+                            console.log(e.key)
+                            if (e.key === 'Tab') {
+                                handleNextClicked();
+                            }
+                            e.preventDefault();
+                        }}
                         required={false}
                         index={6}
                         label="Discount Code" width="100%" inputRefs={inputRefs}

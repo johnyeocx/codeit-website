@@ -73,8 +73,8 @@ function CourseRegister({ signup, coursePath }) {
                 </div>
 
                 <p>
-                    <span>Note:</span> This course is approved under the IMDA iPrep Subsidy. All computing students in Singapore universities are
-                    eligible to claim these subsidies. All who are eligible will receive a <b>500SGD reimbursement</b> of the course under this scheme.
+                    <span>Note:</span> This course is approved under the IMDA iPrep Subsidy. All students studying computing related subjects in Singapore universities are
+                    eligible to enrol in this course for <span>free</span>!
                 </p>
             </div>
             <div className={styles.container3}>
