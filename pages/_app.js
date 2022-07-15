@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import '../styles/globals.scss';
 import '../styles/reviews.scss';
 import Layout from '../components/Layout/Layout';
-
 import AppContext from '../AppContext';
 import Head from 'next/head';
 

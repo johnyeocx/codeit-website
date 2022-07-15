@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 function Layout({ children }) {
     return (
         <>
+
             <Navbar />
             <main>{children}</main>
             {/* <Footer /> */}

@@ -9,8 +9,9 @@ $breakpoint-laptop: 950px;
 $breakpoint-desktop: 1025px;
 $breakpoint-thin: 380px;
 
+$popupHeight: 40px;
 $navHeight: 80px;
-$pageHeight: calc(100vh - 80px);
+$pageHeight: calc(100vh - $navHeight);
 
 // COLORS
 $violet: #8F90F7;

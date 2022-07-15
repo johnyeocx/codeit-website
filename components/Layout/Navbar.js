@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import ContactModal from './ContactModal/ContactModal';
 import MobileContactModal from './ContactModal/MobileContactModal';
 import { scrollToElement } from '../Home/01_Landing';
+import Popup from './Popup/Popup';
 
 
 function Navbar() {
@@ -26,12 +27,19 @@ function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [mobileContactModalOpen, setMobileContactModalOpen] = useState(false);
     const [contactModalClicked, setContactModalClicked] = useState(false);
+    const [popupOpen, setPopupOpen] = useState(true);
 
     return (
         <>
+            <Popup
+                popupOpen={popupOpen}
+                setPopupOpen={setPopupOpen}
+                bgColor={bgColor}
+            />
+
             <div id={styles.navContainer}
                 style={mobileContactModalOpen ?
-                    { backgroundColor: 'transparent' } :
+                    { backgroundColor: bgColor } :
                     { backgroundColor: bgColor }
                 }
             >

@@ -52,14 +52,14 @@ function RegisterInput({
                 style: {
                     fontFamily: 'Work Sans',
                     fontWeight: '500',
-                    fontSize: '16px',
+                    fontSize: '15px',
                 }
             }}
             InputLabelProps={{
                 style: {
                     fontFamily: 'Poppins',
                     fontWeight: '500',
-                    fontSize: '16px',
+                    fontSize: '15px',
                 }
             }}
         />

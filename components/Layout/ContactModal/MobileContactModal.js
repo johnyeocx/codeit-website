@@ -33,7 +33,6 @@ function MobileContactModal({
     useEffect(() => {
 
         const handleClickOutside = (e) => {
-            console.log("clicked")
             if (contentRef.current && !contentRef.current.contains(e.target)) {
                 setModalOpen(false);
             }
@@ -46,16 +45,11 @@ function MobileContactModal({
     }, [])
 
     const getContainerClass = () => {
-
         if (modalOpen) {
             return styles.container
         } else {
             return `${styles.container} ${styles.containerClosed}`
         }
-
-        // {
-        //     return `${styles.container} ${styles.noContainer}`
-        // }
     }
     return (
         <>{
