@@ -107,16 +107,16 @@ export const ciIntro = {
         {
             name: "Ivan Chew",
             image: IvanJPG,
-            company: "NUS Adjunct Professor",
-            degree: "BSc Information Systems,",
-            school: "National University of Singapore"
+            company: "NUS Teaching Staff",
+            degree: "BSc Information Systems (Valedictorian),",
+            school: "NUS"
         },
         {
             name: "Ben Yap",
             image: BenYapJPG,
             company: "SAP Asia AI Scientist",
             degree: "MSc Computer Science,",
-            school: "National University of Singapore"
+            school: "NUS"
         },
         {
             name: "Zahiri",
@@ -227,16 +227,16 @@ export const ciEssentials = {
         {
             name: "Ivan Chew",
             image: IvanJPG,
-            company: "NUS Adjunct Professor",
-            degree: "BSc Information Systems,",
-            school: "National University of Singapore"
+            company: "NUS Teaching Staff",
+            degree: "BSc Information Systems (Valedictorian),",
+            school: "NUS"
         },
         {
             name: "Ben Yap",
             image: BenYapJPG,
             company: "SAP Asia AI Scientist",
             degree: "MSc Computer Science,",
-            school: "National University of Singapore"
+            school: "NUS"
         },
         {
             name: "Zahiri",
@@ -256,7 +256,7 @@ export const ciAdvanced = {
         title: "CodeIT Advanced",
         info: "Online | 6 Weeks",
         description: () => <p>
-            Ready to <span>really</span> understand algorithms? Want to be the master the most complex of them?
+            Ready to <span>really</span> understand algorithms? Want to master the most complex of them?
             <span> CodeIT Advanced</span> was made for you.
         </p>
     },
@@ -356,16 +356,16 @@ export const ciAdvanced = {
         {
             name: "Ivan Chew",
             image: IvanJPG,
-            company: "NUS Adjunct Professor",
-            degree: "BSc Information Systems,",
-            school: "National University of Singapore"
+            company: "NUS Teaching Staff",
+            degree: "BSc Information Systems (Valedictorian),",
+            school: "NUS"
         },
         {
             name: "Ben Yap",
             image: BenYapJPG,
             company: "SAP Asia AI Scientist",
             degree: "MSc Computer Science,",
-            school: "National University of Singapore"
+            school: "NUS"
         },
         {
             name: "Terence Chong",

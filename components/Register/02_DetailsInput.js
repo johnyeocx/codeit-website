@@ -9,6 +9,7 @@ import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import TextField from '@mui/material/TextField';
+import Link from 'next/link';
 
 
 function DetailsInput({
@@ -21,6 +22,7 @@ function DetailsInput({
 }) {
 
     let courses = ["CodeIT Introduction", "CodeIT Essentials", "CodeIT Advanced"]
+    let pathNames = ["intro", "essentials", "advanced"]
 
     const inputRefs = useRef({});
     const [dob, setDOB] = useState(new Date());
@@ -35,7 +37,9 @@ function DetailsInput({
         <div className={styles.container}>
             <div className={styles.containerTop}>
                 <h1>Fill in your details</h1>
-                <p>Course: <span>{courses[selectedCourse]}</span></p>
+                <p>Course: <Link href={`/courses/${pathNames[selectedCourse]}`}>
+                    <span>{courses[selectedCourse]}</span>
+                </Link></p>
             </div>
 
             <div className={styles.containerMiddle}>
