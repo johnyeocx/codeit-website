@@ -18,6 +18,7 @@ import ContactModal from './ContactModal/ContactModal';
 import MobileContactModal from './ContactModal/MobileContactModal';
 import { scrollToElement } from '../Home/01_Landing';
 import Popup from './Popup/Popup';
+import Div100vh from 'react-div-100vh';
 
 
 function Navbar() {
@@ -142,90 +143,93 @@ function Navbar() {
                         contactModalClicked={contactModalClicked}
                         setContactModalClicked={setContactModalClicked}
                     />
-                    <div
-                        className={styles.menuContainer}
+                    <Div100vh
+                        className={styles.menuContainerWrapper}
                         style={menuOpen ? {
                             right: '0px',
-                            backgroundColor: bgColor
+                            backgroundColor: bgColor,
                         } : {
                             right: '200vw',
-                            backgroundColor: bgColor
+                            backgroundColor: bgColor,
                         }}
                     >
-                        <Link href="/">
-                            <div className={styles.menuItem}>
-                                <AiFillHome style={{
-                                    fontSize: '30px',
-                                    marginRight: '20px',
-                                    marginBottom: '2px'
-                                }}
-                                    color="#7C81F7"
-                                />
-                                <a onClick={() => {
-                                    if (router.pathname == '/') scrollToElement("#home-landing")
-                                    setMenuOpen(false)
-                                }}>Home</a>
-                            </div>
-                        </Link>
+                        <div className={styles.menuContainer}>
+                            <Link href="/">
+                                <div className={styles.menuItem}>
+                                    <AiFillHome style={{
+                                        fontSize: '30px',
+                                        marginRight: '20px',
+                                        marginBottom: '2px'
+                                    }}
+                                        color="#7C81F7"
+                                    />
+                                    <a onClick={() => {
+                                        if (router.pathname == '/') scrollToElement("#home-landing")
+                                        setMenuOpen(false)
+                                    }}>Home</a>
+                                </div>
+                            </Link>
 
-                        <Link href="/about">
-                            <div className={styles.menuItem}>
-                                <HiInformationCircle style={{
-                                    fontSize: '30px',
-                                    marginRight: '20px',
-                                    marginBottom: '2px'
-                                }}
-                                    color="#7C81F7"
-                                />
-                                <a onClick={() => setMenuOpen(false)}>About Us</a>
-                            </div>
-                        </Link>
+                            <Link href="/about">
+                                <div className={styles.menuItem}>
+                                    <HiInformationCircle style={{
+                                        fontSize: '30px',
+                                        marginRight: '20px',
+                                        marginBottom: '2px'
+                                    }}
+                                        color="#7C81F7"
+                                    />
+                                    <a onClick={() => setMenuOpen(false)}>About Us</a>
+                                </div>
+                            </Link>
 
-                        <Link href="/our-team">
-                            <div className={styles.menuItem}>
-                                <RiTeamFill style={{
-                                    fontSize: '30px',
-                                    marginRight: '20px',
-                                    marginBottom: '2px'
-                                }}
-                                    color="#7C81F7"
-                                />
-                                <a onClick={() => setMenuOpen(false)}>Our Team</a>
-                            </div>
-                        </Link>
+                            <Link href="/our-team">
+                                <div className={styles.menuItem}>
+                                    <RiTeamFill style={{
+                                        fontSize: '30px',
+                                        marginRight: '20px',
+                                        marginBottom: '2px'
+                                    }}
+                                        color="#7C81F7"
+                                    />
+                                    <a onClick={() => setMenuOpen(false)}>Our Team</a>
+                                </div>
+                            </Link>
 
-                        <Link href="/?section=courses">
-                            <div className={styles.menuItem}>
-                                <MdCastForEducation style={{
-                                    fontSize: '30px',
-                                    marginRight: '20px',
-                                    marginBottom: '2px'
-                                }}
-                                    color="#7C81F7"
-                                />
-                                <a onClick={() => {
-                                    if (router.pathname == "/") {
-                                        scrollToElement("#home-courses-container")
-                                    } else {
-                                        router.push('/?section=courses')
-                                    }
-                                    setMenuOpen(false)
-                                }}>Courses</a>
-                            </div>
-                        </Link>
+                            <Link href="/?section=courses">
+                                <div className={styles.menuItem}>
+                                    <MdCastForEducation style={{
+                                        fontSize: '30px',
+                                        marginRight: '20px',
+                                        marginBottom: '2px'
+                                    }}
+                                        color="#7C81F7"
+                                    />
+                                    <a onClick={() => {
+                                        if (router.pathname == "/") {
+                                            scrollToElement("#home-courses-container")
+                                        } else {
+                                            router.push('/?section=courses')
+                                        }
+                                        setMenuOpen(false)
+                                    }}>Courses</a>
+                                </div>
+                            </Link>
 
-                        <div className={styles.registerBtnContainer}>
-                            <RippleButton
-                                text="Register Now"
-                                type="primary"
-                                onClick={() => {
-                                    router.push('/register')
-                                    setMenuOpen(false);
-                                }}
-                            />
+                            <div className={styles.registerBtnContainer}>
+                                <RippleButton
+                                    text="Register Now"
+                                    type="primary"
+                                    onClick={() => {
+                                        router.push('/register')
+                                        setMenuOpen(false);
+                                    }}
+                                />
+                            </div>
+
                         </div>
+                    </Div100vh>
 
-                    </div>
                 </>
 
             }

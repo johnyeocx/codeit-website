@@ -2,19 +2,19 @@
 
 .registerContainer {
     position: absolute;
-    height: calc(100vh - $navHeight);
-    width: 100%;
+    height: calc(100% - $navHeight - $popupHeight);
+    top: $navHeight + $popupHeight;
+    width: 100vw;
     overflow: hidden;
-    background-color: $homeBackground;
-    z-index: -20;
+    display: flex;
 
     .right {
-        position: absolute;
-        top: $navHeight;
+        height: 100%;
+        // position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        height: calc(100% - $navHeight);
+        overflow: hidden;
     }
 
     @media (min-width: $breakpoint-tablet) {
@@ -49,7 +49,7 @@
 
         .right{
             width: 50%;
-            left: 50%;
+            // left: 50%;
             // background-color: green;
             display: flex;
             flex-direction: column;
@@ -63,31 +63,21 @@
 
 .contentContainer {
     width: fit-content;
-    height: 85%;
+    height: 88%;
     display: flex;
     z-index: 0;
-    // background-color: red;
-
-    @media (min-width: $breakpoint-mobile) {
-        height: 80%
-    }
+    overflow-y: auto;
 }
 
 .navigateContainer {
-
     width: 100vw;
-    height: 15%;
+    height: 12%;
     z-index: 10;
     margin: 0px;
-    padding: 0px 35px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media (min-width: $breakpoint-mobile) {
-        height: 20%
-    }
+    padding: 0px 30px;
 
     button {
         font-size: 18px;

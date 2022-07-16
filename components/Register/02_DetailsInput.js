@@ -108,8 +108,6 @@ function DetailsInput({
                                         required
                                         size='medium'
 
-
-
                                         style={{
                                             marginLeft: '20px',
                                             width: '40%'
@@ -119,14 +117,14 @@ function DetailsInput({
                                             style: {
                                                 fontFamily: 'Work Sans',
                                                 fontWeight: '500',
-                                                fontSize: '17px',
+                                                fontSize: '15px',
                                             }
                                         }}
                                         InputLabelProps={{
                                             style: {
                                                 fontFamily: 'Poppins',
                                                 fontWeight: '500',
-                                                fontSize: '17px',
+                                                fontSize: '15px',
                                             }
                                         }}
 

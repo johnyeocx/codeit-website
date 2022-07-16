@@ -48,25 +48,33 @@
     cursor: pointer;
 }
 
-.menuContainer {
-    height: $pageHeight;
+.menuContainerWrapper {
+    position: fixed;
     width: 100vw;
+    transition: right 0.4s ease-in-out;
+    z-index: 80;
+}
+
+.menuContainer {
+    height: calc(100% - 80px);
+    
+    width: 100%;
     position: fixed;
     top: $navHeight;
     background-color: $navBg;
     transition: right 0.4s ease-in-out;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0px 30px 100px 30px;
+    justify-content: space-around;
+    // padding: 60px 30px 100px 30px;
+    padding: 50px 30px;
 
     .menuItem {
         cursor: pointer;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin: 0px 0px 50px 0px;
+        // margin: 0px 0px 50px 0px;
     }
 
     .menuItem .icon {
@@ -86,8 +94,8 @@
 .registerBtnContainer {
     position: relative;
     width: 100%;
-    margin-top: 40px;
-    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
 }
 
 .contactModal {

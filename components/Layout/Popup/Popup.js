@@ -114,6 +114,8 @@ function Popup({ popupOpen, setPopupOpen, bgColor }) {
 
                     <div className={styles.contentContainer}>
                         <h1>
+                            SMU & NUS Students
+                            <br />
                             Claim your vouchers
                         </h1>
                         <div className={styles.middleContainer}>
@@ -215,7 +217,7 @@ function Popup({ popupOpen, setPopupOpen, bgColor }) {
                 style={{ backgroundColor: bgColor }}
                 onClick={() => setPopupOpen(true)}
             >
-                <p>Have a voucher? <b>Click here to claim it!</b></p>
+                <p>SMU & NUS Students: <b>Claim your vouchers!</b></p>
             </button>
         </>
 

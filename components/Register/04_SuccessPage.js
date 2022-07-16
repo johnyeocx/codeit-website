@@ -15,7 +15,7 @@ function SuccessPage({ selectedPage, selectedCourse }) {
             {
                 selectedPage === 4 &&
                 (
-                    <div>
+                    <>
                         <div className={styles.animationCtn}>
                             <div className={`${styles.icon} ${styles.iconOrderSuccess} ${styles.svg}`}>
                                 <SuccessSVG />
@@ -25,10 +25,7 @@ function SuccessPage({ selectedPage, selectedCourse }) {
                         <div className={styles.containerMiddle}>
                             <h5>You have successfully registered for {courseMap[selectedCourse]}</h5>
                             <p>
-                                Thank you for registering with us! We will contact you shortly to answer any queries you may have about the course and confirm your enrolment.
-
-                                <br /><br />
-                                Additionally, you should have received an acknowledgement email from admin@codeitacademy.com. If you have not, please send an email to this same address with the subject: Missing Confirmation.
+                                Thank you for registering with us! We will contact you shortly to answer any queries you may have about the course and confirm your enrolment. You should have received an acknowledgement email from admin@codeitacademy.com. If you have not, please send an email to this same address with the subject: Missing Confirmation.
                             </p>
                         </div>
                         <div className={styles.containerBottom}>
@@ -41,7 +38,7 @@ function SuccessPage({ selectedPage, selectedCourse }) {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </>
                 )
             }
         </div>

@@ -143,110 +143,116 @@ function Register() {
     }, [])
 
     return (
-        <Div100vh className={styles.registerContainer}>
-            {dimensions.width > breakpoints.tablet && (
-                <div className={styles.left}>
-                    <div className={styles.overlay}>
-                        <h1>Join us now!</h1>
+        <Div100vh>
+            <div className={styles.registerContainer}>
+                {dimensions.width > breakpoints.tablet && (
+                    <div className={styles.left}>
+                        <div className={styles.overlay}>
+                            <h1>Join us now!</h1>
+                        </div>
+                        <div className={styles.imgContainer}>
+                            <Image src={bgImage} layout="fill" objectFit="cover" />
+                        </div>
                     </div>
-                    <div className={styles.imgContainer}>
-                        <Image src={bgImage} layout="fill" objectFit="cover" />
-                    </div>
-                </div>
-            )}
+                )}
 
-            <div className={styles.right}>
-                <div
-                    className={styles.contentContainer}
-                    style={
-                        page === 4 ?
-                            {}
-                            : dimensions.width > breakpoints.tablet ? {
-                                transform: `translateX(-${(page - 1) * 50}vw)`,
-                                transition: `transform ${transformSpeed}s`
-                            } : {
-                                transform: `translateX(-${(page - 1) * 100}vw)`,
-                                transition: `transform ${transformSpeed}s`
-                            }
-                    }
-                >
-                    <CourseSelection
-                        error={courseSelectErr}
-                        setError={setCourseSelectErr}
-                        selectedCourse={selectedCourse}
-                        setSelectedCourse={setSelectedCourse}
-                        setSelectedPage={setSelectedPage}
-                        handleNextClicked={handleNextClicked}
-                        setTransformSpeed={setTransformSpeed}
-                        page={page}
-                    />
-                    <DetailsInput
-                        error={error}
-                        setError={setError}
-                        studentDetails={studentDetails}
-                        setStudentDetails={setStudentDetails}
-                        selectedCourse={selectedCourse}
-                        handleNextClicked={handleNextClicked}
-                        page={page}
-                    />
-                    <StudentDetails
-                        setTransformSpeed={setTransformSpeed}
-                        setError={setError}
-                        studentDetails={studentDetails}
-                        setStudentDetails={setStudentDetails}
-                        schoolInfo={schoolInfo}
-                        setSchoolInfo={setSchoolInfo}
-                        selectedCourse={selectedCourse}
-                        setSelectedPage={setSelectedPage}
-                        page={page}
-                    />
-                    <SuccessPage
-                        selectedPage={page}
-                        selectedCourse={selectedCourse}
-                    />
-
-                </div>
-
-                <div className={styles.navigateContainer} style={
-                    page === 4 ? { display: 'none' } : {}
-                }>
-
-                    <button
-                        style={page == 1 ? { opacity: 0.2 } : { opacity: 1 }}
-                        onClick={() => {
-                            setTransformSpeed(navigateSpeed)
-                            setSelectedPage(page - 1)
-                        }}>
-                        Back
-                    </button>
-
-                    <div className={styles.progressContainer}>
-                        <div className={`${page > 1 ? styles.circle : styles.circleIncomplete} 
-                    ${page == 1 && styles.active}`}
-                        />
-                        <div className={`${styles.line}  ${page > 1 && styles.complete}`} />
-                        <div
-                            className={`${page > 2 ? styles.circle : styles.circleIncomplete} 
-                        ${page == 2 && styles.active}`}
-                        />
-                        <div className={`${styles.line}  ${page > 2 && styles.complete}`} />
-                        <div
-                            className={`${page > 3 ? styles.circle : styles.circleIncomplete} 
-                        ${page == 3 && styles.active}`}
-                        />
-                    </div>
-
-                    <button
-                        style={page == 3 ? { opacity: 0.2 } : { opacity: 1 }}
-                        onClick={() => handleNextClicked()}
-                        disabled={page === 3}
+                <div className={styles.right}>
+                    <div
+                        className={styles.contentContainer}
+                        style={
+                            page === 4 ?
+                                {
+                                    height: '100%',
+                                }
+                                : dimensions.width > breakpoints.tablet ? {
+                                    transform: `translateX(-${(page - 1) * 50}vw)`,
+                                    transition: `transform ${transformSpeed}s`
+                                } : {
+                                    transform: `translateX(-${(page - 1) * 100}vw)`,
+                                    transition: `transform ${transformSpeed}s`
+                                }
+                        }
                     >
-                        Next
-                    </button>
-                </div>
-            </div>
+                        <CourseSelection
+                            error={courseSelectErr}
+                            setError={setCourseSelectErr}
+                            selectedCourse={selectedCourse}
+                            setSelectedCourse={setSelectedCourse}
+                            setSelectedPage={setSelectedPage}
+                            handleNextClicked={handleNextClicked}
+                            setTransformSpeed={setTransformSpeed}
+                            page={page}
+                        />
+                        <DetailsInput
+                            error={error}
+                            setError={setError}
+                            studentDetails={studentDetails}
+                            setStudentDetails={setStudentDetails}
+                            selectedCourse={selectedCourse}
+                            handleNextClicked={handleNextClicked}
+                            page={page}
+                        />
+                        <StudentDetails
+                            setTransformSpeed={setTransformSpeed}
+                            setError={setError}
+                            studentDetails={studentDetails}
+                            setStudentDetails={setStudentDetails}
+                            schoolInfo={schoolInfo}
+                            setSchoolInfo={setSchoolInfo}
+                            selectedCourse={selectedCourse}
+                            setSelectedPage={setSelectedPage}
+                            page={page}
+                        />
+                        <SuccessPage
+                            selectedPage={page}
+                            selectedCourse={selectedCourse}
+                        />
 
+                    </div>
+
+                    <div className={styles.navigateContainer} style={
+                        page === 4 ? { display: 'none' } : {}
+                    }>
+
+                        <button
+                            style={page == 1 ? { opacity: 0.2 } : { opacity: 1 }}
+                            onClick={() => {
+                                if (page == 1) return;
+                                setTransformSpeed(navigateSpeed)
+                                setSelectedPage(page - 1)
+                            }}>
+                            Back
+                        </button>
+
+                        <div className={styles.progressContainer}>
+                            <div className={`${page > 1 ? styles.circle : styles.circleIncomplete} 
+                    ${page == 1 && styles.active}`}
+                            />
+                            <div className={`${styles.line}  ${page > 1 && styles.complete}`} />
+                            <div
+                                className={`${page > 2 ? styles.circle : styles.circleIncomplete} 
+                        ${page == 2 && styles.active}`}
+                            />
+                            <div className={`${styles.line}  ${page > 2 && styles.complete}`} />
+                            <div
+                                className={`${page > 3 ? styles.circle : styles.circleIncomplete} 
+                        ${page == 3 && styles.active}`}
+                            />
+                        </div>
+
+                        <button
+                            style={page == 3 ? { opacity: 0.2 } : { opacity: 1 }}
+                            onClick={() => handleNextClicked()}
+                            disabled={page === 3}
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </Div100vh>
+
     )
 }
 

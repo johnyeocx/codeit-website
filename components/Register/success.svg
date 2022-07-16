@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">
-    <g fill="none" stroke="#22AE73" stroke-width="2">
-        <circle cx="77" cy="77" r="72" style="stroke-dasharray:480px, 480px; stroke-dashoffset: 960px;"></circle>
-        <circle fill="#22AE73" cx="77" cy="77" r="72" style="stroke-dasharray:480px, 480px; stroke-dashoffset: 960px;"></circle>
-        <polyline stroke="#fff" stroke-width="10" points="43.5,77.8 63.7,97.9 112.2,49.4 " style="stroke-dasharray:100px, 100px; stroke-dashoffset: 200px;" />
-    </g>
+<svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M58 115C89.4802 115 115 89.4802 115 58C115 26.5198 89.4802 1 58 1C26.5198 1 1 26.5198 1 58C1 89.4802 26.5198 115 58 115Z" stroke="#22AE73" stroke-width="2" stroke-dasharray="480 480"/>
+<path d="M58 115C89.4802 115 115 89.4802 115 58C115 26.5198 89.4802 1 58 1C26.5198 1 1 26.5198 1 58C1 89.4802 26.5198 115 58 115Z" fill="#22AE73" stroke="#22AE73" stroke-width="2" stroke-dasharray="480 480"/>
+<path d="M31.4792 58.6333L47.4708 74.5458L85.8667 36.15" stroke="white" stroke-width="10" stroke-dasharray="100 100"/>
 </svg>
