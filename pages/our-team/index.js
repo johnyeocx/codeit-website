@@ -24,18 +24,18 @@ function OurTeam() {
 
                 <h1 className={styles.title}>Course Advisors</h1>
                 <div className={`${styles.containerMiddle} ${styles.advisorContainer}`}>
-                    {advisors.map((teacher) => {
+                    {advisors.map((teacher, index) => {
                         return (
-                            <TeacherCard teacher={teacher} />
+                            <TeacherCard key={index} teacher={teacher} />
                         )
                     })}
                 </div>
 
                 <h1 className={styles.title}>Teachers</h1>
                 <div className={`${styles.containerMiddle} ${styles.teachersContainer}`}>
-                    {teachers.map((teacher) => {
+                    {teachers.map((teacher, index) => {
                         return (
-                            <TeacherCard teacher={teacher} />
+                            <TeacherCard key={index} teacher={teacher} />
                         )
                     })}
                 </div>

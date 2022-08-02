@@ -23,8 +23,8 @@ function TeacherCard({ teacher }) {
                 <div className={styles.contentContainer}>
                     <ul>
                         <p style={{ fontWeight: '600', fontSize: 14 }}>Experience</p>
-                        {teacher.credentials.map((credential) => (
-                            <li>
+                        {teacher.credentials.map((credential, index) => (
+                            <li key={index}>
                                 {`${credential}`}
                             </li>
                         ))}
