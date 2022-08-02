@@ -2,12 +2,104 @@
 
 .container {
     position: absolute;
-    @include pageContainer; 
+    top: $navHeight + $popupHeight;
+    height: calc(100% - $navHeight - $popupHeight);
+    width: 100%;
+    padding: 30px 35px 100px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
     overflow-x: hidden;
-    background-color: $homeBackground;
-    z-index: -20;
+
+    @media (min-width: $breakpoint-laptop) {
+        grid-template-columns: 1fr 1fr 1fr;
+        // div:nth-last-child(1) {
+        //     grid-column: span 3;
+        // }
+    }
 
     h1 {
         color: $violet;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: gray;
+    }
+
+    .title {
+        margin: 50px 0px 75px;
+        width: 100%;
+        text-align: center
+    }
+}
+
+.containerTop {
+    @include flexCenter;
+    flex-direction: column;
+}
+
+.containerMiddle {
+    min-width: 500px;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 85px;
+    row-gap: 75px;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $breakpoint-laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.advisorContainer {
+    @media (min-width: $breakpoint-laptop) {
+        div {
+            grid-column: span 1;
+        }
+
+        // div:nth-last-child(2) {
+        //     grid-column: span 6;
+        // }
+
+        // div:nth-last-child(1) {
+        //     grid-column: span 1;
+        // }
+    }
+}
+
+.teachersContainer {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+
+    // div {
+    //     width: 50%;
+    //     position: relative;
+    // }
+    @media (min-width: $breakpoint-laptop) {
+        // div {
+        //     grid-column: span 1;
+        // }
+        // div:nth-last-child(1) {
+        //     grid-column: span 1;
+        // }
+        // div:nth-last-child(2) {
+        //     grid-column: span 1;
+        // }
+          
+        // div:nth-last-child(2):nth-child(3n + 1) {
+        // grid-column-end: 4;
+        // }
     }
 }

@@ -17,13 +17,13 @@ import Image from 'next/image';
 function Statistics() {
     return (
         <div className={styles.expertiseContainer}>
-            <div className={styles.titleContainer}>
+            {/* <div className={styles.titleContainer}>
                 <h1>
                     And we only offer the
                     <span> best...</span>
                 </h1>
                 <div />
-            </div>
+            </div> */}
 
             <div className={styles.teachersContainer}>
                 <h2>Teachers <span>from...</span></h2>

@@ -26,12 +26,15 @@
 
     .left {
         display: none;
+
     }
 
     @media(min-width: $breakpoint-tablet) {
         width: 80%;
         max-width: 900px;
         height: 70%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
 
         .left {
             position: relative;
@@ -40,6 +43,7 @@
             height: 100%;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
+            
 
             .image {
                 border-top-left-radius: 10px;
@@ -54,6 +58,8 @@
                 width: 100%;
                 background-color: rgb(255, 234, 234);
                 background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, lighten($violet, 20%) 73%, rgba(255,255,255,1) 100%);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
             }
         }
 
@@ -121,9 +127,6 @@
 }
 
 .middleContainer {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // column-gap: 20px;
     width: 100%;
     @media (min-width: $breakpoint-mobile) {
         display: grid;

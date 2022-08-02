@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
+import Div100vh from 'react-div-100vh';
 import AppContext from '../../AppContext';
-import styles from '../../styles/Team/Team.module.scss';
+import styles from '../../styles/About/About.module.scss';
 
 
 function About() {
@@ -14,19 +15,19 @@ function About() {
     }, [])
 
     return (
-        <div className={styles.container}
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '80vh',
-            }}
+        <Div100vh style={{
+            backgroundColor: bgColor,
+            zIndex: '-100',
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center', alignItems: 'center'
+        }}
+            className={styles.container}
         >
             <h1>
                 Coming Soon...
             </h1>
-
-        </div>
+        </Div100vh >
     )
 }
 

@@ -96,10 +96,10 @@ function Navbar() {
                                         if (router.pathname == '/') scrollToElement("#home-landing")
                                     }}
                                 />
-                                <NavButton text='About Us'
+                                {/* <NavButton text='About Us'
                                     isLink
                                     href="/about"
-                                />
+                                /> */}
                                 <NavButton text='Our Team'
                                     isLink
                                     href="/our-team"
@@ -170,7 +170,7 @@ function Navbar() {
                                 </div>
                             </Link>
 
-                            <Link href="/about">
+                            {/* <Link href="/about">
                                 <div className={styles.menuItem}>
                                     <HiInformationCircle style={{
                                         fontSize: '30px',
@@ -181,7 +181,7 @@ function Navbar() {
                                     />
                                     <a onClick={() => setMenuOpen(false)}>About Us</a>
                                 </div>
-                            </Link>
+                            </Link> */}
 
                             <Link href="/our-team">
                                 <div className={styles.menuItem}>
