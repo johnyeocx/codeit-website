@@ -60,7 +60,7 @@ export const advisors = [
     {
         name: "Ben Joseph Murphy",
         image: BenJoseph,
-        company: "Shopee Software Intern",
+        company: "Shopee Software Engineer",
         degree: "BSc Information Systems (Valedictorian),",
         school: "NUS",
         credentials: [
