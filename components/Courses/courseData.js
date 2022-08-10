@@ -95,8 +95,8 @@ export const ciIntro = {
     brochure: IntroBrochure,
     signup: {
         nextRun: {
-            date: "Aug 13 - Aug 27",
-            time: "Sat 9:00am - 12:00pm"
+            date: "Aug 28 - Sep 11",
+            time: "Sun 3pm - 6pm"
         },
         pricing: {
             student: 250,
@@ -215,8 +215,8 @@ export const ciEssentials = {
     brochure: EssentialsBrochure,
     signup: {
         nextRun: {
-            date: "Aug 13 - Aug 27",
-            time: "Sat 3:00pm - 6:00pm"
+            date: "Aug 21 - Sep 25",
+            time: "Sun 9am - 12pm"
         },
         pricing: {
             student: 250,
