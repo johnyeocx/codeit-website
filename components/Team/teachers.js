@@ -75,10 +75,10 @@ export const teachers = [
         name: "Ivan Chew",
         image: IvanJPG,
         company: "NUS Computing Tutor",
-        degree: "BSc Information Systems (Valedictorian),",
+        degree: "BSc Information Systems,",
         school: "NUS",
         credentials: [
-            "BSc Information Systems Valedictorian (NUS)",
+            "BSc Information Systems (NUS) - Top in class",
             "NUS Teaching Assistant (Best TA from AY 2015-2018)",
             "Taknet Systems Software Engineer",
         ]

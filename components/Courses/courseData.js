@@ -108,7 +108,7 @@ export const ciIntro = {
             name: "Ivan Chew",
             image: IvanJPG,
             company: "NUS Teaching Staff",
-            degree: "BSc Information Systems (Valedictorian),",
+            degree: "BSc Information Systems,",
             school: "NUS"
         },
         {
@@ -228,7 +228,7 @@ export const ciEssentials = {
             name: "Ivan Chew",
             image: IvanJPG,
             company: "NUS Teaching Staff",
-            degree: "BSc Information Systems (Valedictorian),",
+            degree: "BSc Information Systems,",
             school: "NUS"
         },
         {
@@ -357,7 +357,7 @@ export const ciAdvanced = {
             name: "Ivan Chew",
             image: IvanJPG,
             company: "NUS Teaching Staff",
-            degree: "BSc Information Systems (Valedictorian),",
+            degree: "BSc Information Systems,",
             school: "NUS"
         },
         {
