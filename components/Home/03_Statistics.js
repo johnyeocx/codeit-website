@@ -58,7 +58,7 @@ function Statistics() {
                 </div>
             </div>
 
-            <div className={`${styles.teachersContainer}`}>
+            {/* <div className={`${styles.teachersContainer}`}>
                 <h2
                     style={{
                         marginBottom: 20
@@ -70,7 +70,7 @@ function Statistics() {
                     </div>
                 </div>
 
-            </div>
+            </div> */}
         </div>
     )
 }
