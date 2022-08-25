@@ -33,7 +33,7 @@ function Advanced() {
     }, [])
 
     const buttons = [
-        { title: "Why Intro?", element: "#course-usp" },
+        { title: "Why Advanced?", element: "#course-usp" },
         { title: "Curriculum", element: "#course-curriculum" },
         { title: "Schedule", element: "#course-signup" },
         { title: "Pricing", element: "#course-pricing" },

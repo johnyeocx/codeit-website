@@ -33,7 +33,7 @@ function Intro() {
     }, [])
 
     const buttons = [
-        { title: "Why Intro?", element: "#course-usp" },
+        { title: "Why Essentials?", element: "#course-usp" },
         { title: "Curriculum", element: "#course-curriculum" },
         { title: "Schedule", element: "#course-signup" },
         { title: "Pricing", element: "#course-pricing" },

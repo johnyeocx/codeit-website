@@ -9,7 +9,7 @@ function CourseUSP({ benefits, title }) {
     return (
         <div id="course-usp" className={styles.container}>
             <div className={styles.container1}>
-                <h1>{`Why learn ${title.toLowerCase()}`}</h1>
+                <h1>{`Why learn ${title.toLowerCase()}?`}</h1>
                 <div />
             </div>
             <div className={styles.container2}>
