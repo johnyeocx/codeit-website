@@ -55,7 +55,8 @@ function CourseRegister({ signup, coursePath }) {
                     <div>
                         <table className={`${styles.scheduleTable} ${styles.pricing}`}>
                             <tbody>
-                                <tr>
+                                <td><b>{`${signup.pricing.public}SGD`}</b></td>
+                                {/* <tr>
                                     <td>Student</td>
                                     <td><strike style={{
                                         marginRight: '10px'
@@ -66,7 +67,7 @@ function CourseRegister({ signup, coursePath }) {
                                     <td><strike style={{
                                         marginRight: '10px'
                                     }}>999SGD</strike>{`${signup.pricing.public}SGD`}</td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
