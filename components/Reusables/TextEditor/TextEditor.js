@@ -62,7 +62,7 @@ function TextEditor() {
             language: userLang,
             input: userInput
         }).then((res) => {
-            console.log(res.data)
+
             setUserOutput(res.data.output);
         }).then(() => {
             setLoading(false);
