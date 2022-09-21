@@ -47,7 +47,7 @@ function CourseCard({
             />
 
             <div className={styles.upcoming}>
-                <b>Upcoming: </b> {upcoming}
+                <b>Upcoming: </b> {upcoming ? upcoming : "TBC"}
             </div>
 
             <div className={styles.bottomButtons}>
