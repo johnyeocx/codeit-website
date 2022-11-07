@@ -1,0 +1,161 @@
+@import '../config';
+
+$containerWidth: 50%;
+
+.mainContainer {
+    position: absolute;
+    height: calc(100%);
+    width: 100vw;
+    padding: 15% 0px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.topContainer {
+    width: $containerWidth;
+    text-align: center;
+    margin: 20px 0px;
+
+    h1 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+        transition: 0.5s;
+    }
+}
+
+.middleContainer {
+    width: $containerWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100px);
+    opacity: 0;
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+.container1 {
+    width: $containerWidth;
+    background-color: black;
+    
+}
+
+.courseSelectTile {
+    h4 {
+        font-size: 17px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+@keyframes exit {
+    100% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    opacity: 1;
+    transform: translateX(0);
+    // transition: 1s;
+    animation: exit 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.container2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .middleContainer {
+        width: 100%;
+        text-align: start;
+        // background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        .helperText {
+            font-family: $secondary-font;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        div {
+            font-size: 15px;
+        }
+
+        span {
+            display: inline-block;
+            width: 100px;
+            font-weight: 600;
+        }
+    }
+
+    .buttonContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+}
+
+.infoTextContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+
+    .left {
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    .right {
+        cursor: pointer
+    }
+}
+
+.detailInput {
+    font-size: 10px;
+    position: relative;
+    padding: 0px;
+    
+    
+    div {
+        padding: 0px;
+        margin: 0px;
+        background-color: #E7F3FF !important;
+        height: 45px;
+        font-size: 15px;
+        font-family: $secondary-font;
+        font-weight: 500;
+    }
+}

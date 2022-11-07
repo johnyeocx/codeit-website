@@ -9,7 +9,7 @@ $breakpoint-laptop: 950px;
 $breakpoint-desktop: 1025px;
 $breakpoint-thin: 380px;
 
-$popupHeight: 40px;
+$popupHeight: 0px;
 $navHeight: 80px;
 $pageHeight: calc(100vh - $navHeight);
 
@@ -20,6 +20,7 @@ $blue: #75B8FF;
 $light-blue: #BCEAFF;
 $navBg: #FFFDFD;
 $dark-blue: #355C92;
+$error: #FE0100;
 
 $homeBackground: #FFFDFD;
 

@@ -9,7 +9,6 @@ import moment from 'moment';
 import bgImage from '../../assets/Register/BGImage.jpg';
 import Image from 'next/image';
 import Div100vh from 'react-div-100vh';
-import { useRouter } from 'next/router';
 
 const breakpoints = {
     mobile: 481,
@@ -22,20 +21,24 @@ export const navigateSpeed = 0.4;
 function Register() {
 
     const value = useContext(AppContext);
-    let { isMobile, dimensions } = value.state;
-    let { bgColor } = value.state;
+    let { dimensions } = value.state;
     let { setBgColor } = value;
-    const router = useRouter();
 
 
     const [selectedCourse, setSelectedCourse] = useState(null);
     const [studentDetails, setStudentDetails] = useState({
+        selectedCourse: null,
         firstName: "",
         lastName: "",
         email: "",
         mobile: "",
-        birthDate: new Date(),
-        discountCode: ""
+        birthDate: null,
+        nationality: "Singapore",
+        discountCode: "",
+        school: "",
+        otherSchool: "",
+        course: "",
+        otherCourse: "",
     })
 
     const [schoolInfo, setSchoolInfo] = useState({
@@ -49,15 +52,14 @@ function Register() {
     const [page, setSelectedPage] = useState(1);
     const [transformSpeed, setTransformSpeed] = useState(0.2);
 
-
-
     const checkDetailsInput = () => {
         let errors = []
         for (let key in studentDetails) {
             if (key == "discountCode") {
                 continue;
             }
-            if (!studentDetails[key]) {
+            if (studentDetails[key] == null ||
+                (key != "selectedCourse" && !studentDetails[key])) {
                 let newError = {
                     type: key,
                     message: `${key} blank`
@@ -98,23 +100,12 @@ function Register() {
 
     const handleNextClicked = () => {
         setTransformSpeed(navigateSpeed)
-        if (page === 1) {
-            if (selectedCourse != 0 && !selectedCourse) {
-                setCourseSelectErr(true)
-                return
-            } else {
-                setCourseSelectErr(false)
-            }
-        }
-
-        if (page === 2) {
-            let valid = checkDetailsInput();
-            if (!valid) return;
-        }
         setSelectedPage(page + 1)
     }
 
     useEffect(() => {
+        setBgColor("#FFFDFD")
+
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
@@ -129,7 +120,6 @@ function Register() {
             setSelectedCourse(courseMap[course])
             setSelectedPage(2)
         }
-        setBgColor("#FFFDFD")
 
         const windowResize = () => {
             setTransformSpeed(0);
@@ -148,7 +138,7 @@ function Register() {
                 {dimensions.width > breakpoints.tablet && (
                     <div className={styles.left}>
                         <div className={styles.overlay}>
-                            <h1>Join us now!</h1>
+                            <h1>Register Your Interest!</h1>
                         </div>
                         <div className={styles.imgContainer}>
                             <Image src={bgImage} layout="fill" objectFit="cover" />
@@ -157,6 +147,7 @@ function Register() {
                 )}
 
                 <div className={styles.right}>
+                    {/* <h1>Register your interest!</h1> */}
                     <div
                         className={styles.contentContainer}
                         style={
@@ -173,21 +164,12 @@ function Register() {
                                 }
                         }
                     >
-                        <CourseSelection
-                            error={courseSelectErr}
-                            setError={setCourseSelectErr}
-                            selectedCourse={selectedCourse}
-                            setSelectedCourse={setSelectedCourse}
-                            setSelectedPage={setSelectedPage}
-                            handleNextClicked={handleNextClicked}
-                            setTransformSpeed={setTransformSpeed}
-                            page={page}
-                        />
                         <DetailsInput
                             error={error}
                             setError={setError}
                             studentDetails={studentDetails}
                             setStudentDetails={setStudentDetails}
+                            setSelectedCourse={setSelectedCourse}
                             selectedCourse={selectedCourse}
                             handleNextClicked={handleNextClicked}
                             page={page}
@@ -202,6 +184,7 @@ function Register() {
                             selectedCourse={selectedCourse}
                             setSelectedPage={setSelectedPage}
                             page={page}
+                            error={error}
                         />
                         <SuccessPage
                             selectedPage={page}
@@ -211,7 +194,7 @@ function Register() {
                     </div>
 
                     <div className={styles.navigateContainer} style={
-                        page === 4 ? { display: 'none' } : {}
+                        page === 3 ? { display: 'none' } : {}
                     }>
 
                         <button
@@ -225,7 +208,9 @@ function Register() {
                         </button>
 
                         <div className={styles.progressContainer}>
-                            <div className={`${page > 1 ? styles.circle : styles.circleIncomplete} 
+                            <div className={`${page == 1 ? styles.circleOngoing :
+                                page > 1 ? styles.circle : styles.circleIncomplete
+                                } 
                     ${page == 1 && styles.active}`}
                             />
                             <div className={`${styles.line}  ${page > 1 && styles.complete}`} />
@@ -233,17 +218,12 @@ function Register() {
                                 className={`${page > 2 ? styles.circle : styles.circleIncomplete} 
                         ${page == 2 && styles.active}`}
                             />
-                            <div className={`${styles.line}  ${page > 2 && styles.complete}`} />
-                            <div
-                                className={`${page > 3 ? styles.circle : styles.circleIncomplete} 
-                        ${page == 3 && styles.active}`}
-                            />
                         </div>
 
                         <button
-                            style={page == 3 ? { opacity: 0.2 } : { opacity: 1 }}
+                            style={page == 2 ? { opacity: 0.2 } : { opacity: 1 }}
                             onClick={() => handleNextClicked()}
-                            disabled={page === 3}
+                            disabled={page === 2}
                         >
                             Next
                         </button>

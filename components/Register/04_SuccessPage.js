@@ -13,7 +13,7 @@ function SuccessPage({ selectedPage, selectedCourse }) {
 
         <div className={styles.container}>
             {
-                selectedPage === 4 &&
+                selectedPage === 3 &&
                 (
                     <>
                         <div className={styles.animationCtn}>
@@ -25,7 +25,14 @@ function SuccessPage({ selectedPage, selectedCourse }) {
                         <div className={styles.containerMiddle}>
                             <h5>You have successfully registered for {courseMap[selectedCourse]}</h5>
                             <p>
-                                Thank you for registering with us! We will contact you shortly to answer any queries you may have about the course and confirm your enrolment. You should have received an acknowledgement email from admin@codeitacademy.com. If you have not, please send an email to this same address with the subject: Missing Confirmation.
+                                Thank you for registering with us! We will contact you shortly to answer any questions you have regarding our courses as well as help you with the subsidy application and how to proceed with enrolment.
+                                You should have received an acknowledgement email from admin@codeitacademy.com.
+                                If you have not, please <a
+                                    style={{ textDecoration: 'underline', color: '#006FFF' }}
+                                    target="_blank"
+                                    href=" https://api.whatsapp.com/send/?phone=6583718250&text&type=phone_number&app_absent=0">
+                                    WhatsApp us at +65 8371 8250
+                                </a> to enquire about the status of your registration.
                             </p>
                         </div>
                         <div className={styles.containerBottom}>
