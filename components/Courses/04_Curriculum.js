@@ -100,11 +100,7 @@ function Curriculum({ prerequisites, curriculum, brochure }) {
 
                                         {
                                             lesson.topics.map((topic, index) => (
-                                                <p
-                                                    style={
-                                                        {}
-                                                    }
-                                                >
+                                                <p key={index}>
                                                     {`${index + 1}. ${topic}`}
                                                 </p>
                                             ))
