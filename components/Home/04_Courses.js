@@ -5,6 +5,7 @@ import CourseCard from './CourseCard/CourseCard';
 import PlayButton from '../../assets/Home/Courses/PlayButton.svg'
 import NextButton from '../../assets/Home/Courses/NextButton.svg'
 import ForwardButton from '../../assets/Home/Courses/ForwardButton.svg'
+import CyberPlay from '../../assets/Home/Courses/CyberPlay.svg'
 import { ciEssentials, ciIntro } from '../Courses/courseData';
 
 const courses = [
@@ -37,6 +38,17 @@ const courses = [
         color: "#8F90F7",
         icon: ForwardButton,
         link: "advanced"
+    },
+
+    {
+        title: "Cyber Intro",
+        subtitle: "For those with",
+        emphasis: "no experience",
+        upcoming: "11 - 12 December",
+        length: "2 days",
+        color: "#FF8B83",
+        icon: CyberPlay,
+        link: "cyber_intro"
     },
 ]
 

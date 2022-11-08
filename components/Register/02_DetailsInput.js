@@ -21,8 +21,8 @@ function DetailsInput({
     page
 }) {
 
-    let courses = ["CodeIT Introduction", "CodeIT Essentials", "CodeIT Advanced"]
-    let pathNames = ["intro", "essentials", "advanced"]
+    let courses = ["CodeIT Introduction", "CodeIT Essentials", "CodeIT Advanced", "Cyber Intro"]
+    let pathNames = ["intro", "essentials", "advanced", "cyber_intro"]
 
     const inputRefs = useRef({});
     const [dob, setDOB] = useState(new Date());
@@ -163,12 +163,5 @@ function DetailsInput({
     )
 }
 
-{/* <DesktopDatePicker
-                            label="Date desktop"
-                            inputFormat="MM/dd/yyyy"
-                            // value={value}
-                            // onChange={handleChange}
-                            renderInput={(params) => <TextField {...params} />}
-                        /> */}
 
 export default DetailsInput

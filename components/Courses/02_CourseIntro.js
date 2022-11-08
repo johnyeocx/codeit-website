@@ -20,7 +20,7 @@ function CourseIntro({ bgSecondary, title, overview }) {
                         overview.svg()
                     )}
                     <div className={styles.titleContainer}>
-                        <h1>{`What is CI ${title}`}</h1>
+                        <h1>{`What is ${title}`}</h1>
                         <div />
                     </div>
                 </div>

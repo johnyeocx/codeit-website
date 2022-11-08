@@ -179,7 +179,7 @@ function StudentDetails({
                         </button>
                     </div>
                     {reqError && (
-                        <div className={styles.errContainer}>Error: Please Try Again</div>
+                        <div className={styles.errContainer}>Error: Please try again or whatsapp us at +6583718250</div>
                     )}
                 </div>
             </div>

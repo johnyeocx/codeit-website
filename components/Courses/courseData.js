@@ -370,3 +370,114 @@ export const ciAdvanced = {
         }
     ]
 }
+
+export const cyberIntro = {
+    coursePath: "cyber_intro",
+    title: "Cyber Intro",
+    landing: {
+        title: "Cyber Intro",
+        info: "Online | 3 Weeks",
+        description: () => <p>
+            Firewalls, Hacking, VPN... Unsure of whether cyber security is your niche or
+            struggling to begin your journey?
+            <span> Cyber Intro</span> was made for you.
+        </p>
+    },
+
+
+    overview: {
+        text: (dimensions) => <p>
+            <span>Cyber Intro</span> is a 2 day, action packed, introductory course to cybersecurity.
+            {
+                dimensions.width < breakpoints.tablet ? (
+                    <><br /> <br /></>
+                ) : (<span> </span>)
+            }
+            Here, you will learn about the principles of cybersecurity and how cybersecurity is practised in the real world.
+            With the hands on experience of being an attacker and a defender, you will learn how to adapt and act in real situations!
+        </p>,
+        graduates: 0,
+        svg: () => <IntroSVG className={introStyles.introSvg} />
+    },
+    benefits: [
+        {
+            title: 'Duration',
+            description: 'Nothing is more valuable than your time! Within just 2 days, you will be exposed to the fundamentals of cybersecurity! From here, you will start to look at everyday problems differently through a pair of lenses!',
+            icon: () => <TimeIcon className={uspStyles.benefitIcon} />,
+        },
+        {
+            title: 'Expertise',
+            description: 'Coming from both educational institutions and top tech firms, our teachers bring the best of both worlds to teach you the best knowledge, in the best way.',
+            icon: () => <ExpertIcon className={uspStyles.benefitIcon} />,
+        },
+        {
+            title: 'Affordable',
+            description: "Why pay 5 figures for a bootcamp when you aren't even sure of your interest for the subject? Start your journey cost free (nearly) that gets even better with our several subsidies!",
+            icon: () => <CheapIcon className={uspStyles.benefitIcon} />,
+        }
+    ],
+    prerequisites: [
+        {
+            title: "None. That's right, we welcome those with no experience!",
+            topics: []
+        }
+    ],
+    curriculum: [
+        {
+            title: "Day 1: Attack",
+            description: "Ever wondered why we need cybersecurity and what it really is about? This is where you will start your journey.",
+            topics: [
+                "Cybersecurity Landscape",
+                "Lesson 2: Cybersecurity Fundamentals",
+                "Cybersecurity Frameworks and Industry Standards ",
+                "OSI Model ",
+                "Common Cyber Attacks",
+            ]
+        },
+        {
+            title: "Day 2: Defense",
+            description: "Learn about encryption and how best to ensure that your system is safe from attackers!",
+            topics: [
+                "Cryptography",
+                "Common Cyber Defences",
+                "Incident Response",
+                "Trending Cybersecurity Topics and Technologies",
+                "Continuing Your Cybersecurity Journey",
+            ]
+        },
+    ],
+    // brochure: cyberIntroBrochure,
+    signup: {
+        nextRun: {
+            date: "11 & 12 Dec 2022",
+            time: "1:30pm - 6:00pm"
+        },
+        pricing: {
+            student: 250,
+            public: 500
+        }
+    },
+    teachers: [
+        {
+            name: "Ivan Chew",
+            image: IvanJPG,
+            company: "NUS Teaching Staff",
+            degree: "BSc Information Systems,",
+            school: "NUS"
+        },
+        {
+            name: "Ben Yap",
+            image: BenYapJPG,
+            company: "SAP Asia AI Scientist",
+            degree: "MSc Computer Science,",
+            school: "NUS"
+        },
+        {
+            name: "Zahiri",
+            image: ZahiriJPG,
+            company: "GovTech Software Engineer",
+            degree: "BSc Engineering,",
+            school: "University of Newcastle",
+        }
+    ]
+}
