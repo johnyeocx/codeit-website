@@ -428,7 +428,7 @@ export const cyberIntro = {
             description: "Ever wondered why we need cybersecurity and what it really is about? This is where you will start your journey.",
             topics: [
                 "Cybersecurity Landscape",
-                "Lesson 2: Cybersecurity Fundamentals",
+                "Cybersecurity Fundamentals",
                 "Cybersecurity Frameworks and Industry Standards ",
                 "OSI Model ",
                 "Common Cyber Attacks",
@@ -449,7 +449,7 @@ export const cyberIntro = {
     // brochure: cyberIntroBrochure,
     signup: {
         nextRun: {
-            date: "11 & 12 Dec 2022",
+            date: "10 & 11 Dec 2022",
             time: "1:30pm - 6:00pm"
         },
         pricing: {

@@ -44,7 +44,7 @@ const courses = [
         title: "Cyber Intro",
         subtitle: "For those with",
         emphasis: "no experience",
-        upcoming: "11 - 12 December",
+        upcoming: "10 - 11 December",
         length: "2 days",
         color: "#FF8B83",
         icon: CyberPlay,
