@@ -30,7 +30,7 @@ function OrderSummary({
                 "mobile_number": paymentDetails.mobile_number,
                 "birth_date": moment(paymentDetails.birth_date).format("YYYY-MM-DD"),
                 address: billingAddressDetails.address,
-                country: billingAddressDetails.country,
+                country: billingAddressDetails.country.label,
                 postal_code: billingAddressDetails.postal_code
             }
 
@@ -41,10 +41,10 @@ function OrderSummary({
                 throw new Error("Something went wrong")
             }
 
-            window.location.href = res.data.payment_url
-            // await simulatePaymentNotification({
-            //     bill_ref_no: res.data.bill_ref_no
-            // })
+            // window.location.href = res.data.payment_url
+            await simulatePaymentNotification({
+                bill_ref_no: res.data.bill_ref_no
+            })
 
             setLoading(false)
         } catch (error) {

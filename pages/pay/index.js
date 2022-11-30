@@ -80,13 +80,15 @@ function Payment() {
         setBgColor("white")
 
         const params = router.query
+        const birth_date = params.birth_date
+            ? parse(params.birth_date, "dd-MM-yy", new Date()) : null;
         setPaymentDetails({
             ...paymentDetails,
             first_name: params.first_name,
             last_name: params.last_name,
             email: params.email,
             mobile_number: params.mobile_number,
-            birth_date: parse(params.birth_date, "dd-MM-yy", new Date()),
+            birth_date: birth_date,
         })
     }, [])
 

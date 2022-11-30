@@ -80,7 +80,7 @@ function StudentDetails({
                 last_name: studentDetails.lastName,
                 email: studentDetails.email,
                 mobile_number: studentDetails.mobile,
-                birth_date: format(studentDetails.birthDate, "dd-MM-yy"),
+                birth_date: studentDetails.birthDate ? format(studentDetails.birthDate, "dd-MM-yy") : null,
             }
         })
     }
@@ -257,15 +257,7 @@ function StudentDetails({
                             }
                             onClick={() => redirectToPaymentPage()}
                         >
-                            {
-                                submitting ? (
-                                    <div className={styles2.spinner}></div>
-
-                                ) : (
-                                    <>Pay & Enrol Now</>
-                                )
-                            }
-
+                            <>Pay & Enrol Now</>
                         </button>
                     </div>
                 </div>
