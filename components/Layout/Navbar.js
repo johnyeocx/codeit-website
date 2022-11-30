@@ -32,11 +32,11 @@ function Navbar() {
 
     return (
         <>
-            <Popup
+            {/* <Popup
                 popupOpen={popupOpen}
                 setPopupOpen={setPopupOpen}
                 bgColor={bgColor}
-            />
+            /> */}
 
             <div id={styles.navContainer}
                 style={mobileContactModalOpen ?
