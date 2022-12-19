@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/Register/DetailsInput.module.scss';
-
 import RegisterInput from '../Reusables/RegisterInput/RegisterInput';
-
 import { MenuItem, InputLabel, FormControl, styled } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useRouter } from 'next/router';
@@ -10,7 +8,6 @@ import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import { countries, schools, approvedCourses } from './nationalities';
 import FormAutoComplete from '../../components/Form/FormAutoComplete';
 import { isValid } from 'date-fns';
-
 
 const CustomSelect = styled(Select)({
     '& .MuiSelect-select': {
@@ -46,7 +43,6 @@ function DetailsInput({
             }
         }
     }
-
 
     const getCountries = (countries) => {
         let countryLabels = []
@@ -148,9 +144,7 @@ function DetailsInput({
                             </InputLabel>
 
                             {/* Course Select */}
-
                             <CustomSelect
-
                                 value={studentDetails.selectedCourse != null ? studentDetails.selectedCourse : ""}
                                 onChange={(e) => {
                                     setStudentDetails({ ...studentDetails, selectedCourse: e.target.value })
@@ -163,17 +157,17 @@ function DetailsInput({
 
 
                             >
-                                <MenuItem value={0} style={{
+                                {/* <MenuItem value={0} style={{
                                     display: 'flex',
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
 
                                 }}>
                                     <p style={{ fontSize: '15px' }}>None</p>
-                                </MenuItem>
+                                </MenuItem> */}
                                 {courses.map((course, index) => {
                                     return (
-                                        <MenuItem value={index + 1} style={{
+                                        <MenuItem key={course} value={index + 1} style={{
                                             display: 'flex',
                                             justifyContent: 'space-between',
                                             alignItems: 'center',
@@ -191,8 +185,6 @@ function DetailsInput({
                                     )
                                 })}
                             </CustomSelect>
-
-
                         </FormControl>
 
                         <div style={{ width: '48%' }}>
@@ -234,7 +226,6 @@ function DetailsInput({
                                     e.preventDefault()
                                     setStudentDetails({ ...studentDetails, otherSchool: e.target.value })
                                 }}
-
                             />}
                     </div>
 

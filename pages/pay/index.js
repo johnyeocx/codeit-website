@@ -1,17 +1,9 @@
-import { FormControl, InputLabel, MenuItem, Select, styled, TextField } from '@mui/material';
-
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import Div100vh from 'react-div-100vh'
 import AppContext from '../../AppContext';
-
 import styles from '../../styles/Payment/Payment.module.scss';
-
-
-import { getStudentFromEmail, getUpcomingCourses, validateDeposit } from '../../api/api';
-import { format, formatDistance, parse } from 'date-fns';
-
-
-import axios from 'axios';
+import { getUpcomingCourses } from '../../api/api';
+import { parse } from 'date-fns';
 import PaymentDetails from '../../components/Payment/01_PaymentDetails';
 import OrderSummary from '../../components/Payment/03_OrderSummary';
 import BillingAddress from '../../components/Payment/02_BillingAddress';
@@ -123,7 +115,6 @@ function Payment() {
                                         setPaymentDetails={setPaymentDetails}
                                         depositFound={depositFound}
                                         setDepositFound={setDepositFound}
-
 
                                         depositInfo={depositInfo}
                                         setDepositInfo={setDepositInfo}

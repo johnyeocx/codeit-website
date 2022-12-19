@@ -244,7 +244,6 @@ function PaymentDetails({
     }
 
     return (
-
         <div className={`${styles.paymentDetailsContainer}  ${fadeOut && styles.fadeOut}`}>
             <div className={styles.header}>
                 <h3>

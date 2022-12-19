@@ -22,6 +22,7 @@ function StudentDetails({
     studentDetails,
     setStudentDetails,
     selectedCourse,
+    checkDetailsInput,
     page,
     setSelectedPage,
     error,
@@ -36,7 +37,7 @@ function StudentDetails({
 
     const handleRegisterBtn = async () => {
         setSubmitting(true);
-
+        checkDetailsInput();
         if (!tncConfirmed) {
             setTncError(true);
             setSubmitting(false);
@@ -84,7 +85,7 @@ function StudentDetails({
             }
         })
     }
-
+    
     return (
         <div className={styles.container}>
             <div className={styles.containerTop}>
@@ -211,7 +212,7 @@ function StudentDetails({
                     </div>
 
                     {reqError && (
-                        <div className={styles2.errContainer}>Error: Please Try Again</div>
+                        <div className={styles2.errContainer}>Request Error: Please Try Again</div>
                     )}
 
                     <div className={styles2.btnContainer}>

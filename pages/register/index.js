@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AppContext from '../../AppContext';
-import CourseSelection from '../../components/Register/01_CourseSelection';
 import DetailsInput from '../../components/Register/02_DetailsInput';
 import StudentDetails from '../../components/Register/03_StudentDetails';
 import SuccessPage from '../../components/Register/04_SuccessPage';
@@ -183,6 +182,7 @@ function Register() {
                             setSchoolInfo={setSchoolInfo}
                             selectedCourse={selectedCourse}
                             setSelectedPage={setSelectedPage}
+                            checkDetailsInput={checkDetailsInput}
                             page={page}
                             error={error}
                         />
@@ -211,7 +211,7 @@ function Register() {
                             <div className={`${page == 1 ? styles.circleOngoing :
                                 page > 1 ? styles.circle : styles.circleIncomplete
                                 } 
-                    ${page == 1 && styles.active}`}
+                                ${page == 1 && styles.active}`}
                             />
                             <div className={`${styles.line}  ${page > 1 && styles.complete}`} />
                             <div
