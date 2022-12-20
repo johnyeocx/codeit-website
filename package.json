@@ -20,7 +20,7 @@
     "fs": "^0.0.1-security",
     "jquery": "^3.6.0",
     "moment": "^2.29.3",
-    "next": "^12.2.3-canary.0",
+    "next": "^12.3.4",
     "react": "18.2.0",
     "react-div-100vh": "^0.7.0",
     "react-dom": "18.2.0",

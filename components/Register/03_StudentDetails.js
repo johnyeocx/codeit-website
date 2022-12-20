@@ -35,9 +35,26 @@ function StudentDetails({
     const inputRefs = useRef({});
     const router = useRouter()
 
+    const checkComplete = () => {
+        const field = ["firstName", "lastName", "mobile", "email", "birthDate"];
+        let complete = true;
+        for (let key in error) {
+            let val = Object.values(error[key]);
+            console.log(val);
+            if (field.includes(val[0])) {
+                complete = false;
+            }
+        }
+        return complete;
+    }
+
     const handleRegisterBtn = async () => {
         setSubmitting(true);
         checkDetailsInput();
+        if (!checkComplete()) {
+            setSubmitting(false);
+            return;
+        }
         if (!tncConfirmed) {
             setTncError(true);
             setSubmitting(false);

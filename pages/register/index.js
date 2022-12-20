@@ -53,8 +53,9 @@ function Register() {
 
     const checkDetailsInput = () => {
         let errors = []
+        console.log(studentDetails);
         for (let key in studentDetails) {
-            if (key == "discountCode") {
+            if (key === "discountCode") {
                 continue;
             }
             if (studentDetails[key] == null ||
