@@ -35,7 +35,8 @@ function FormAutoComplete({
     value,
     handleChange,
     label,
-    disabled
+    disabled,
+    error
 }) {
 
     return (
@@ -56,6 +57,7 @@ function FormAutoComplete({
                     {...params}
                     label={label}
                     variant="filled"
+                    error={error}
                     InputLabelProps={{
                         style: {
                             fontFamily: 'Poppins',

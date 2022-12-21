@@ -209,7 +209,8 @@ function DetailsInput({
                             <FormAutoComplete
                                 options={schools}
                                 value={studentDetails.school}
-                                handleChange={(newValue) => {
+                                error={error.findIndex((elem) => elem.type === "school") != -1}
+                                handleChange={(newValue) => {   
                                     setStudentDetails({ ...studentDetails, school: newValue })
                                 }}
                                 label="School"
@@ -222,6 +223,7 @@ function DetailsInput({
                                 width="48%"
                                 marginLeft='20px'
                                 value={studentDetails.otherSchool}
+                                error={error.findIndex((elem) => elem.type === "otherSchool") != -1}
                                 setValue={(e) => {
                                     e.preventDefault()
                                     setStudentDetails({ ...studentDetails, otherSchool: e.target.value })
@@ -241,6 +243,7 @@ function DetailsInput({
                                     <FormAutoComplete
                                         options={getApprovedCourses()}
                                         value={studentDetails.course}
+                                        error={error.findIndex((elem) => elem.type === "course") != -1}
                                         handleChange={(newValue) => {
                                             setStudentDetails({ ...studentDetails, course: newValue })
                                         }}
@@ -255,6 +258,7 @@ function DetailsInput({
                                         width="48%"
                                         marginLeft='20px'
                                         value={studentDetails.otherCourse}
+                                        error={error.findIndex((elem) => elem.type === "otherCourse") != -1}
                                         setValue={(e) => {
                                             e.preventDefault()
                                             setStudentDetails({ ...studentDetails, otherCourse: e.target.value })
@@ -270,9 +274,10 @@ function DetailsInput({
                                 index={1}
                                 label="Course of Study"
                                 width="100%"
-                                value={studentDetails.otherCourse}
+                                value={studentDetails.course}
+                                error={error.findIndex((elem) => elem.type === "course") != -1}
                                 setValue={(e) => {
-                                    setStudentDetails({ ...studentDetails, otherCourse: e.target.value })
+                                    setStudentDetails({ ...studentDetails, course: e.target.value })
                                 }}
                                 onKeyDown={(e) => {
                                     if (e.key === 'Tab') {
@@ -282,8 +287,6 @@ function DetailsInput({
                                 }}
                             />
                         )
-
-
                     }
 
 
@@ -320,6 +323,7 @@ function DetailsInput({
                         }
 
                         <p className={styles.disclaimerText}>Disclaimer:&nbsp;&nbsp; blah blah blah</p>
+                        {/* <button onClick={() => console.log(studentDetails)}>test</button> */}
                     </div>
 
                 </div>

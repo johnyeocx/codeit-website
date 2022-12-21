@@ -52,23 +52,13 @@ function Register() {
     const [transformSpeed, setTransformSpeed] = useState(0.2);
 
     const checkDetailsInput = () => {
+        console.log("checking")
         let errors = []
         console.log(studentDetails);
         for (let key in studentDetails) {
             if (key === "discountCode") {
                 continue;
             }
-            if (studentDetails[key] == null ||
-                (key != "selectedCourse" && !studentDetails[key])) {
-                let newError = {
-                    type: key,
-                    message: `${key} blank`
-
-                }
-                errors.push(newError)
-                continue;
-            }
-
             if (key === "email" && !validateEmail(studentDetails[key])) {
                 errors.push({
                     type: "email",
@@ -82,9 +72,35 @@ function Register() {
                     message: "invalid date of birth"
                 })
             }
+            if (studentDetails[key] == null || studentDetails[key] == "") {
+                let newError = {
+                    type: key,
+                    message: `${key} blank`
+
+                }
+                errors.push(newError)
+                continue;
+            }
         }
-        setError(errors)
-        return errors.length === 0
+        setError(errors);
+        return errors;
+    }
+
+    const subsidyFormComplete = (err) => {
+        const field = ["selectedCourse", "nationality", "school", "course"];
+        let complete = true;
+
+        for (let key in err) {
+            let val = Object.values(err[key]);
+            // console.log(val[0]);
+            if(studentDetails.school == "Others" && studentDetails.otherSchool == ""
+                || studentDetails.course == "Others" && studentDetails.otherCourse == ""
+                || field.includes(val[0])) {
+                complete = false;
+            }
+        }
+        console.log(studentDetails)
+        return complete;
     }
 
     function validateEmail(email) {
@@ -99,6 +115,14 @@ function Register() {
     }
 
     const handleNextClicked = () => {
+        if (page === 1) {
+            const err = checkDetailsInput();
+            console.log(err)
+            if (!subsidyFormComplete(err)) {
+                return;
+            }
+        }
+        setError([]);
         setTransformSpeed(navigateSpeed)
         setSelectedPage(page + 1)
     }

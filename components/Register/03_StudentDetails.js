@@ -40,7 +40,7 @@ function StudentDetails({
         let complete = true;
         for (let key in error) {
             let val = Object.values(error[key]);
-            console.log(val);
+            // console.log(val);
             if (field.includes(val[0])) {
                 complete = false;
             }
@@ -91,6 +91,10 @@ function StudentDetails({
 
     const redirectToPaymentPage = async () => {
         console.log(studentDetails);
+        checkDetailsInput();
+        if (!checkComplete()) {
+            return;
+        }
         router.push({
             pathname: "/pay",
             query: {
