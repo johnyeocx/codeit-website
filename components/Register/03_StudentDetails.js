@@ -95,6 +95,10 @@ function StudentDetails({
         if (!checkComplete()) {
             return;
         }
+        if (!tncConfirmed) {
+            setTncError(true);
+            return;
+        }
         router.push({
             pathname: "/pay",
             query: {
