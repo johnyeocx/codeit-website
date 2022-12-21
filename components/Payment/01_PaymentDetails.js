@@ -93,14 +93,13 @@ function PaymentDetails({
     }
 
     const onDepositCodeChange = async (e) => {
-
         const query = e.target.value
         setPaymentDetails({ ...paymentDetails, deposit_code: e.target.value })
-
         checkEmailAndDepositCode(paymentDetails.email, query)
     }
 
     const depositTokenRef = useRef(null)
+
     const checkEmailAndDepositCode = async (email, depositCode) => {
         setDepositLoading(true)
         setDepositFound(true)
@@ -170,8 +169,6 @@ function PaymentDetails({
                 })
                 setDepositFound(false)
             }
-
-
         } catch (error) {
             if (axios.isCancel(error)) {
                 console.log("Cancelling deposit request")
@@ -236,11 +233,28 @@ function PaymentDetails({
     }
 
     const handleNextClicked = () => {
-        setFadeOut(true)
-        setTimeout(() => {
-            setPage(page + 1)
-            setFadeOut(false)
-        }, 150)
+        console.log(paymentDetails);
+        checkValidDepositInput();
+        // setFadeOut(true)
+        // setTimeout(() => {
+        //     setPage(page + 1)
+        //     setFadeOut(false)
+        // }, 150)
+    }
+
+    const checkValidDepositInput = () => {
+        if (!validateEmail(paymentDetails.email)) {
+            console.log("invalid email");
+            return false;
+        }
+
+    }
+    
+    function validateEmail(email) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            return true
+        }
+        return false
     }
 
     return (

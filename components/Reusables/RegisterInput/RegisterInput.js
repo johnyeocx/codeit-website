@@ -26,7 +26,6 @@ function RegisterInput({
     }
     return (
         <TextField
-
             error={error}
             inputRef={(ref) => {
                 if (inputRefs) inputRefs.current[index] = ref
