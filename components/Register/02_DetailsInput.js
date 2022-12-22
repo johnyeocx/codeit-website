@@ -1,13 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styles from '../../styles/Register/DetailsInput.module.scss';
 import RegisterInput from '../Reusables/RegisterInput/RegisterInput';
 import { MenuItem, InputLabel, FormControl, styled } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { useRouter } from 'next/router';
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import { countries, schools, approvedCourses } from './nationalities';
 import FormAutoComplete from '../../components/Form/FormAutoComplete';
-import { isValid } from 'date-fns';
 
 const CustomSelect = styled(Select)({
     '& .MuiSelect-select': {
@@ -112,9 +110,6 @@ function DetailsInput({
     if (page == 4) {
         return <></>
     }
-    const router = useRouter();
-    const endpoint = process.env.NODE_ENV == "dev" ? "http://localhost:3000" : "codeitacademy.com"
-
 
     return (
         <div className={styles.container}>
@@ -323,7 +318,6 @@ function DetailsInput({
                         }
 
                         <p className={styles.disclaimerText}>Disclaimer:&nbsp;&nbsp; blah blah blah</p>
-                        {/* <button onClick={() => console.log(studentDetails)}>test</button> */}
                     </div>
 
                 </div>

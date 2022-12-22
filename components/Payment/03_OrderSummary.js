@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 import { format } from 'date-fns';
 import moment from 'moment';
 import React, { useState } from 'react'
@@ -18,7 +18,7 @@ function OrderSummary({
     const [loading, setLoading] = useState(false)
 
     const handleCheckoutClicked = async () => {
-        // setLoading(true);
+        setLoading(true);
         try {
             const reqBody = {
                 "course_id": courses[paymentDetails.selectedCourse].course_id,
@@ -33,8 +33,7 @@ function OrderSummary({
                 country: billingAddressDetails.country.label,
                 postal_code: billingAddressDetails.postal_code
             }
-
-
+            console.log(reqBody)
             const res = await payRequest(reqBody)
 
             if (!res.data) {
@@ -49,6 +48,8 @@ function OrderSummary({
             setLoading(false)
         } catch (error) {
             console.log("Failed to make checkout request:", error)
+            setLoading(false);
+            // display error message
         }
     }
 
@@ -81,8 +82,6 @@ function OrderSummary({
                 return true
             }
         }
-
-
         return false
     }
 

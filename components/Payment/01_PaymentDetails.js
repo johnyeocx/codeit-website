@@ -44,6 +44,8 @@ function PaymentDetails({
 
     const [fadeOut, setFadeOut] = useState(false)
     const [discountLoading, setDiscountLoading] = useState(false)
+    const [error, setError] = useState([]);
+    const [emailFound, setEmailFound] = useState(false);
 
     const tokRef = useRef(null)
     const onEmailChange = async (e) => {
@@ -77,10 +79,10 @@ function PaymentDetails({
                     mobile_number: res.data["mobile_number"],
                     birth_date: res.data["birth_date"]
                 })
+                setEmailFound(true);
             } else {
                 console.log("Email not found")
             }
-
             setEmailLoading(false)
         } catch (error) {
             if (axios.isCancel(error)) {
@@ -99,7 +101,6 @@ function PaymentDetails({
     }
 
     const depositTokenRef = useRef(null)
-
     const checkEmailAndDepositCode = async (email, depositCode) => {
         setDepositLoading(true)
         setDepositFound(true)
@@ -107,6 +108,7 @@ function PaymentDetails({
 
         if (depositCode.length != 6) {
             setDepositLoading(false)
+            setDepositFound(false)
             setFieldsLocked({
                 first_name: false,
                 last_name: false,
@@ -234,22 +236,66 @@ function PaymentDetails({
 
     const handleNextClicked = () => {
         console.log(paymentDetails);
-        checkValidDepositInput();
-        // setFadeOut(true)
-        // setTimeout(() => {
-        //     setPage(page + 1)
-        //     setFadeOut(false)
-        // }, 150)
-    }
-
-    const checkValidDepositInput = () => {
-        if (!validateEmail(paymentDetails.email)) {
-            console.log("invalid email");
-            return false;
+        const err = checkDetailsInput();
+        if (!completeInfo(err)) {
+            return;
         }
-
+        setFadeOut(true)
+        setTimeout(() => {
+            setPage(page + 1)
+            setFadeOut(false)
+        }, 150)
     }
     
+    const checkDetailsInput = () => {
+        let errors = [];
+
+        if (!emailFound && (paymentDetails.deposit_code != '' && !depositFound)) {
+            errors.push(
+                {
+                    type: "paid_deposit",
+                    message: "not found"
+                }
+            )
+        } 
+
+        if (!validateEmail(paymentDetails.email)) {
+            errors.push(
+                {
+                    type: "email",
+                    message: "invalid"
+                }
+            )
+        }
+
+        if (paymentDetails.selectedCourse === "") {
+            errors.push(
+                {
+                    type: "selected_course",
+                    message: "invalid"
+                }
+            )
+        }
+
+        setError(errors);
+        console.log(errors);
+        return errors;
+    }
+
+    const completeInfo = (err) => {
+        const field = ["email", "paid_deposit", "selected_course"];
+        let complete = true;
+
+        for (let key in err) {
+            let val = Object.values(err[key]);
+            if(field.includes(val[0])) {
+                console.log(val[0]);
+                complete = false;
+            }
+        }
+        return complete;
+    }
+
     function validateEmail(email) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
             return true
@@ -279,6 +325,8 @@ function PaymentDetails({
                     <PaymentDetailsInput
                         label="Email"
                         width="48%"
+                        error={error.findIndex((elem) => elem.type === "email") != -1}
+                        errorText="Email invalid"
                         loading={emailLoading}
                         value={paymentDetails.email}
                         onChange={onEmailChange}
@@ -292,8 +340,8 @@ function PaymentDetails({
                         loading={depositLoading}
                         value={paymentDetails.deposit_code}
                         onChange={onDepositCodeChange}
-                        error={paymentDetails.deposit_code != "" && !depositFound}
-                        errorText="Deposit code and / or email invalid"
+                        error={error.findIndex((elem) => elem.type === "paid_deposit") != -1}
+                        errorText="Deposit code invalid"
                         success={depositInfo !== null}
                     />
                 </div>
@@ -305,6 +353,7 @@ function PaymentDetails({
                         marginBottom: '20px',
 
                     }}
+                    error={error.findIndex((elem) => elem.type === "selected_course") != -1}
                     required
                     size='small'
                     disabled={fieldsLocked.selected_course}
