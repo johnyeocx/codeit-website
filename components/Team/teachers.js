@@ -96,18 +96,18 @@ export const teachers = [
             "DBS Data Scientist",
         ]
     },
-    {
-        name: "Zumana Haseen",
-        image: Zumana,
-        company: "ByteDance Software Engineer",
-        degree: "Bsc",
-        school: "Queensland University of Tech",
-        credentials: [
-            "BSc Computer Science (NUS)",
-            "Acronis Asia Research Developer Intern",
-            "VizanSign Software Engineer"
-        ]
-    },
+    // {
+    //     name: "Zumana Haseen",
+    //     image: Zumana,
+    //     company: "ByteDance Software Engineer",
+    //     degree: "Bsc",
+    //     school: "Queensland University of Tech",
+    //     credentials: [
+    //         "BSc Computer Science (NUS)",
+    //         "Acronis Asia Research Developer Intern",
+    //         "VizanSign Software Engineer"
+    //     ]
+    // },
     {
         name: "Terence Chong",
         image: TerenceImg,
