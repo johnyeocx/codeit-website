@@ -33,9 +33,9 @@ function OrderSummary({
                 country: billingAddressDetails.country.label,
                 postal_code: billingAddressDetails.postal_code
             }
-            console.log(reqBody)
-            const res = await payRequest(reqBody)
 
+            const res = await payRequest(reqBody)
+            console.log(res)
             if (!res.data) {
                 throw new Error("Something went wrong")
             }

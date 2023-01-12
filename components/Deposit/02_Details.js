@@ -44,17 +44,17 @@ function Details({
             "course_id": upcomingCourses[depositDetails.selectedCourse].course_id
         }
 
-
         try {
             setLoading(true)
             const { data } = await getDepositURL(reqBody)
+            console.log(data)
             setLoading(false)
             window.location.href = data.payment_url
+            // await simulatePaymentNotification(reqBody);
         } catch (error) {
             setLoading(false)
             console.log("Failed to get deposit url:", error)
         }
-
 
         return;
     }
@@ -100,7 +100,7 @@ function Details({
                         />
 
                         <div style={{ marginTop: '15px' }}>
-                            <span>Cost:</span><span>{`20 SGD`}</span>
+                            <span>Cost:</span><span>{`50 SGD`}</span>
                         </div>
                     </>
                 </div>

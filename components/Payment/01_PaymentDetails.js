@@ -31,6 +31,9 @@ function PaymentDetails({
     discountInfo,
     setDiscountInfo,
 
+    emailFound, 
+    setEmailFound,
+
     depositFound,
     setDepositFound,
 
@@ -45,16 +48,16 @@ function PaymentDetails({
     const [fadeOut, setFadeOut] = useState(false)
     const [discountLoading, setDiscountLoading] = useState(false)
     const [error, setError] = useState([]);
-    const [emailFound, setEmailFound] = useState(false);
+    // const [emailFound, setEmailFound] = useState(false);
 
     const tokRef = useRef(null)
     const onEmailChange = async (e) => {
         setPaymentDetails({ ...paymentDetails, email: e.target.value })
-
+        setError([])
         let query = e.target.value
-
+        console.log("query " + query)
         if (paymentDetails.deposit_code.length == 6 &&
-            checkEmailAndDepositCode(query, paymentDetails.deposit_code)) {
+            console.log(checkEmailAndDepositCode(query, paymentDetails.deposit_code))) {
             return
         }
 
@@ -69,7 +72,7 @@ function PaymentDetails({
             const res = await axios.get(`http://127.0.0.1:5000/student?email=${query}`, {
                 cancelToken: tokRef.current.token
             })
-
+            // console.log("res " + res.data)
             if (res.data) {
                 setPaymentDetails({
                     ...paymentDetails,
@@ -81,7 +84,8 @@ function PaymentDetails({
                 })
                 setEmailFound(true);
             } else {
-                console.log("Email not found")
+                console.log("Email not found");
+                setEmailFound(false);
             }
             setEmailLoading(false)
         } catch (error) {
@@ -96,6 +100,7 @@ function PaymentDetails({
 
     const onDepositCodeChange = async (e) => {
         const query = e.target.value
+        setError([])
         setPaymentDetails({ ...paymentDetails, deposit_code: e.target.value })
         checkEmailAndDepositCode(paymentDetails.email, query)
     }
@@ -106,7 +111,7 @@ function PaymentDetails({
         setDepositFound(true)
         setDepositInfo(null)
 
-        if (depositCode.length != 6) {
+        if (depositCode == undefined || depositCode.length != 6) {
             setDepositLoading(false)
             setDepositFound(false)
             setFieldsLocked({
@@ -235,8 +240,8 @@ function PaymentDetails({
     }
 
     const handleNextClicked = () => {
-        console.log(paymentDetails);
         const err = checkDetailsInput();
+        console.log(err);
         if (!completeInfo(err)) {
             return;
         }
@@ -249,36 +254,44 @@ function PaymentDetails({
     
     const checkDetailsInput = () => {
         let errors = [];
-
-        if (!emailFound && (paymentDetails.deposit_code != '' && !depositFound)) {
-            errors.push(
-                {
-                    type: "paid_deposit",
-                    message: "not found"
-                }
-            )
-        } 
-
-        if (!validateEmail(paymentDetails.email)) {
+        // checkEmailAndDepositCode(paymentDetails.email, paymentDetails.depositCode);
+        if (!emailFound) {
             errors.push(
                 {
                     type: "email",
-                    message: "invalid"
+                    message: "not found"
                 }
             )
+        } else {
+            if (paymentDetails.deposit_code != '' && !depositFound) {
+                errors.push(
+                    {
+                        type: "paid_deposit",
+                        message: "not found"
+                    }
+                )
+            } 
+    
+            if (!validateEmail(paymentDetails.email)) {
+                errors.push(
+                    {
+                        type: "email",
+                        message: "invalid"
+                    }
+                )
+            }
+    
+            if (paymentDetails.selectedCourse === "") {
+                errors.push(
+                    {
+                        type: "selected_course",
+                        message: "invalid"
+                    }
+                )
+            }
         }
-
-        if (paymentDetails.selectedCourse === "") {
-            errors.push(
-                {
-                    type: "selected_course",
-                    message: "invalid"
-                }
-            )
-        }
-
+ 
         setError(errors);
-        console.log(errors);
         return errors;
     }
 
@@ -289,7 +302,6 @@ function PaymentDetails({
         for (let key in err) {
             let val = Object.values(err[key]);
             if(field.includes(val[0])) {
-                console.log(val[0]);
                 complete = false;
             }
         }
@@ -330,7 +342,7 @@ function PaymentDetails({
                         loading={emailLoading}
                         value={paymentDetails.email}
                         onChange={onEmailChange}
-                        success={depositInfo !== null}
+                        success={emailFound}
                         required
                     />
 

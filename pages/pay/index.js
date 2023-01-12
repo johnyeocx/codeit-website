@@ -58,10 +58,11 @@ function Payment() {
         birth_date: false,
         selected_course: false
     })
+    const [emailFound, setEmailFound] = useState(null)
     const [depositFound, setDepositFound] = useState(null)
     const [depositInfo, setDepositInfo] = useState(null)
     const [discountInfo, setDiscountInfo] = useState(null)
-
+    
     const [page, setPage] = useState(1)
 
 
@@ -113,6 +114,8 @@ function Payment() {
                                         setDepositLoading={setDepositLoading}
                                         paymentDetails={paymentDetails}
                                         setPaymentDetails={setPaymentDetails}
+                                        emailFound={emailFound}
+                                        setEmailFound={setEmailFound}
                                         depositFound={depositFound}
                                         setDepositFound={setDepositFound}
 
@@ -138,7 +141,6 @@ function Payment() {
                                 )
                             }
                         </div>
-
 
                     </div>
                     <div className={styles.right}>
