@@ -4,19 +4,6 @@ import { TiChevronLeft } from 'react-icons/ti';
 import { BiDownload } from 'react-icons/bi';
 
 function Curriculum({ prerequisites, curriculum, brochure }) {
-    // const prerequisites = [
-    //     // {
-    //     //     title: "None. That's right, we welcome those with no experience!",
-    //     //     topics: []
-    //     // }
-    //     // ,
-    //     {
-
-    // ]
-
-    // const curriculum = [
-
-    // ]
 
     const [selected, setSelected] = useState(null);
 
@@ -77,6 +64,7 @@ function Curriculum({ prerequisites, curriculum, brochure }) {
                 </button>
                 {curriculum.map((lesson, index) => {
                     return (
+
                         <button
                             key={index}
                             className={styles.lessonContainer}
@@ -93,18 +81,36 @@ function Curriculum({ prerequisites, curriculum, brochure }) {
                                 />
                             </div>
 
-                            <p
-                                style={
-                                    selected === index ? {
-                                        maxHeight: '200px',
-                                        marginBottom: '10px',
-                                    } : {
-                                        maxHeight: '0px'
-                                    }
+                            <div style={
+                                selected === index ? {
+                                    maxHeight: '500px',
+                                    marginBottom: '10px',
+                                } : {
+                                    maxHeight: '0px'
                                 }
-                            >
-                                {lesson.description}
-                            </p>
+
+                            } className={styles.prereqContainer}>
+                                <p>
+                                    {lesson.description}
+                                </p>
+
+                                {lesson.topics && (
+                                    <>
+                                        <div style={{ marginTop: '10px' }} />
+
+                                        {
+                                            lesson.topics.map((topic, index) => (
+                                                <p key={index}>
+                                                    {`${index + 1}. ${topic}`}
+                                                </p>
+                                            ))
+                                        }
+                                    </>
+                                )
+
+                                }
+                            </div>
+
 
 
                         </button>
@@ -118,7 +124,7 @@ function Curriculum({ prerequisites, curriculum, brochure }) {
                     target="_blank"
                 >
                     <BiDownload className={styles.downloadIcon} />
-                    <p>Course Brochure</p>
+                    <p>{`Course Brochure ${brochure === undefined ? "(Coming Soon)" : ""}`}</p>
                 </a>
             </div>
         </div >

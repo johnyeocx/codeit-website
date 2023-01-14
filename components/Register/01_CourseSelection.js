@@ -67,6 +67,17 @@ function CourseSelection({
                     }
                     <h1>CodeIT Advanced</h1>
                 </button>
+
+                <button onClick={(e) => handleCourseClicked(e, 3)}>
+                    {
+                        selectedCourse === 3 ?
+                            <SelectedBG className={styles.courseBg} style={{
+                                borderColor: '#68B2FF'
+                            }} />
+                            : <IntroBG className={styles.courseBg} />
+                    }
+                    <h1>Cyber Intro</h1>
+                </button>
             </div>
 
             {error && <div className={styles.errorContainer}>Select a course</div>}

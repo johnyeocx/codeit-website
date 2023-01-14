@@ -326,4 +326,4 @@ function DetailsInput({
     )
 }
 
-export default DetailsInput
+export default DetailsInput;

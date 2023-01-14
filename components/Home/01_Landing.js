@@ -37,8 +37,6 @@ function Landing() {
                     <div className={styles.left}>
                         <p><span>80%</span> of students fail to self-learn programming.
                         </p>
-                        {/* <br /> */}
-                        {/* <p>Be the <span>20%.</span></p> */}
                         <p>Let <span>us</span> help with that.</p>
                     </div>
                     {isMobile && (

@@ -46,11 +46,16 @@ function Details({
 
         try {
             setLoading(true)
-            const { data } = await getDepositURL(reqBody)
-            console.log(data)
+            // const { data } = await getDepositURL(reqBody)
+            const res = await getDepositURL(reqBody)
+            console.log(res.data)
             setLoading(false)
-            window.location.href = data.payment_url
+            window.location.href = res.data.payment_url
             // await simulatePaymentNotification(reqBody);
+            console.log()
+            await simulatePaymentNotification({
+                bill_ref_no: res.data.bill_ref_no
+            })
         } catch (error) {
             setLoading(false)
             console.log("Failed to get deposit url:", error)

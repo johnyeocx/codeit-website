@@ -137,7 +137,8 @@ function Register() {
         let courseMap = {
             "intro": 0,
             "essentials": 1,
-            "advanced": 2
+            "advanced": 2,
+            "cyber_intro": 3
         }
 
         if (course && courseMap[course] != undefined) {
