@@ -371,7 +371,7 @@ export const ciAdvanced = {
     ]
 }
 
-export const cyberIntro = {
+/*export const cyberIntro = {
     coursePath: "cyber_intro",
     title: "Cyber Intro",
     landing: {
@@ -480,4 +480,4 @@ export const cyberIntro = {
             school: "University of Newcastle",
         }
     ]
-}
+}*/

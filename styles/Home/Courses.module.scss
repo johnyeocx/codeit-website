@@ -53,10 +53,6 @@
     @media (min-width: $breakpoint-desktop) {
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 45px;
-
-        div:nth-last-child(1) {
-            grid-column: span 3;
-        }
     }
 
     
