@@ -43,8 +43,6 @@
     justify-items: center;
     align-items: center;
 
-    
-
     @media (min-width: $breakpoint-tablet) {
         grid-template-columns: 1fr 1fr;
         column-gap: 45px;
@@ -54,8 +52,6 @@
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 45px;
     }
-
-    
 }
 
 .courseCardContainer {

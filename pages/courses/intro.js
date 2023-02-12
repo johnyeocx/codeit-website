@@ -30,7 +30,7 @@ function Intro() {
 
     useEffect(() => {
         setBgColor(bgPrimary)
-    }, [])
+    })
 
     const buttons = [
         { title: "Why Intro?", element: "#course-usp" },

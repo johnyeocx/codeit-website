@@ -30,6 +30,7 @@ function Statistics() {
                 <div className={styles.brandsContainer}>
                     <div className={styles.brandSlider}>
                         <Image
+                            alt=''
                             src={Brands}
                             className={styles.brandImage}
                         />
@@ -43,14 +44,14 @@ function Statistics() {
                 <div className={styles.ratingsContainer}>
                     <div className={styles.rating}>
                         <div className={styles.ratingIconContainer}>
-                            <Image objectFit="contain" src={Switchup} />
+                            <Image objectFit="contain" src={Switchup} alt=''/>
                         </div>
                         <h3 className={styles.ratingBrand}>Switchup</h3>
                         <h3>5/5 Stars</h3>
                     </div>
                     <div className={styles.rating}>
                         <div className={styles.ratingIconContainer}>
-                            <Image objectFit="contain" src={Google} />
+                            <Image objectFit="contain" src={Google} alt=''/>
                         </div>
                         <h3 className={styles.ratingBrand}>Google</h3>
                         <h3>5/5 Stars</h3>

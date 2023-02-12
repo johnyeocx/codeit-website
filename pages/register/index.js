@@ -166,7 +166,7 @@ function Register() {
                             <h1>Register Your Interest!</h1>
                         </div>
                         <div className={styles.imgContainer}>
-                            <Image src={bgImage} layout="fill" objectFit="cover" />
+                            <Image src={bgImage} alt='' layout="fill" objectFit="cover" />
                         </div>
                     </div>
                 )}

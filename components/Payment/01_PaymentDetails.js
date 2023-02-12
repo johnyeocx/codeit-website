@@ -69,7 +69,7 @@ function PaymentDetails({
 
         try {
             tokRef.current = axios.CancelToken.source();
-            const res = await axios.get(`http://127.0.0.1:5000/student?email=${query}`, {
+            const res = await axios.get(`https://codeitacademy.co/student?email=${query}`, {
                 cancelToken: tokRef.current.token
             })
             // console.log("res " + res.data)

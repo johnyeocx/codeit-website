@@ -151,7 +151,7 @@ function Basic({
                         const dateString = format(new Date(course.start_date), 'dd LLL yyyy')
 
                         return (
-                            <MenuItem value={index} style={{
+                            <MenuItem key={index} value={index} style={{
                                 display: 'flex',
                                 justifyContent: 'space-between',
                                 alignItems: 'center',

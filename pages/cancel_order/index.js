@@ -8,7 +8,7 @@ function CancelOrder() {
         setTimeout(() => {
             router.push('/')
         }, 3000)
-    }, [])
+    })
     return (
         <div style={{
             width: '100vw',

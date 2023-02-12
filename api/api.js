@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export const endpoint = "http://127.0.0.1:5000"
+// export const endpoint = "http://127.0.0.1:5000"
 // export const endpoint = "https://codeit.whereto.lol"
-
+export const endpoint = "https://codeitacademy.co"
+    
 export const registerRequest = async (studentDetails) =>
     axios.post(`${endpoint}/register`, studentDetails)
 
