@@ -5,6 +5,7 @@ import '../styles/reviews.scss';
 import Layout from '../components/Layout/Layout';
 import AppContext from '../AppContext';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -36,9 +37,15 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
+  const router = useRouter()
+  const showHeader = router.pathname === '/deposit'
+    ? false : true;
+
   if (!loaded) {
     return <div></div>;
   }
+
+
 
   return (
     <AppContext.Provider
@@ -57,9 +64,16 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/logo.png" />
         <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+
+      {showHeader ? (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        < Component {...pageProps} />
+      )
+      }
+
     </AppContext.Provider>
 
   )

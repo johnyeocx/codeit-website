@@ -40,7 +40,7 @@ const courses = [
         link: "advanced"
     },
 
-    {
+    /*{
         title: "Cyber Intro",
         subtitle: "For those with",
         emphasis: "no experience",
@@ -49,7 +49,7 @@ const courses = [
         color: "#FF8B83",
         icon: CyberPlay,
         link: "cyber_intro"
-    },
+    },*/
 ]
 
 function Courses() {

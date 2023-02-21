@@ -30,16 +30,21 @@
                 left: 0px;
                 width: 100%;
                 height: 100%;
-                z-index: 1;
+                z-index: -1;
+                
             }
 
             .overlay {
+                background-color: red;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(100, 100, 100, 0.2);
-                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.6);
                 @include flexCenter;
+
                 h1 {
+                    // text-align: center;
+                    line-height: 55px;
+                    width: 70%;
                     z-index: 10;
                     color: white;
                     font-size: 300%;
@@ -66,7 +71,7 @@
     height: 88%;
     display: flex;
     z-index: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .navigateContainer {
@@ -93,6 +98,22 @@
     height: 50px;
     @include flexCenter;
 
+    .circleIncomplete {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: lighten($salmon, 20%);
+        transition: transform 0.2s;
+    }
+
+    .circleOngoing {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: lighten($salmon, 15%);
+        transition: transform 0.2s;
+    }
+
     .circle {
         width: 15px;
         height: 15px;
@@ -101,18 +122,14 @@
         transition: transform 0.2s
     }
 
+    
+
     .active {
         transform: scale(1.5);
         background-color: lighten($salmon, 5%);
     }
 
-    .circleIncomplete {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background-color: lighten($salmon, 20%);
-        transition: transform 0.2s;
-    }
+    
 
     .line {
         height: 3px;

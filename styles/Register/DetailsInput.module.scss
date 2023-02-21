@@ -21,7 +21,8 @@
 
     p {
         margin: 10px 0px;
-        font-size: 16px;
+        font-size: 15px;
+        font-weight: 500;
 
         span {
             font-weight: 600;
@@ -42,9 +43,66 @@
     position: relative;
     
     div {
+        
         background-color: #E7F3FF !important;
         margin-bottom: 30px;
         height: 55px;
+        font-size: 15px;
+        font-family: $secondary-font;
+        font-weight: 500;
+    }
+}
+
+.selectLabel {
+    font-size: 15px;
+    font-family: $secondary-font;
+    font-weight: 500;
+}
+
+.selectInput {
+    width: 50%;
+    padding: 0px;
+
+    div {
+
+        background-color: #E7F3FF;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+
+        div {
+            font-size: 15px;
+            font-family: $secondary-font;
+            font-weight: 500;
+        }
     }
 
+    div:focus {
+        background-color: #E7F3FF;
+    }
+}
+
+.subsidyText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    div {
+        display: flex;
+        margin-bottom: 5px;
+    }
+    span {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.disclaimerText {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555
 }

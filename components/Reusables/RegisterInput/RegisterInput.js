@@ -12,7 +12,8 @@ function RegisterInput({
     value,
     setValue,
     required,
-    onKeyDown
+    onKeyDown,
+    marginLeft
 }) {
     const handleKeyPress = (e) => {
         if (e.key == "Enter") {
@@ -25,7 +26,6 @@ function RegisterInput({
     }
     return (
         <TextField
-
             error={error}
             inputRef={(ref) => {
                 if (inputRefs) inputRefs.current[index] = ref
@@ -37,11 +37,11 @@ function RegisterInput({
             size='medium'
             value={value}
             onChange={setValue}
-
             type={type && type}
 
             style={{
                 width: width,
+                marginLeft: marginLeft && marginLeft
             }}
 
             onKeyDown={onKeyDown ? onKeyDown : (e) => {

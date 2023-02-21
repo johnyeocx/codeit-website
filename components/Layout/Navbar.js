@@ -19,6 +19,7 @@ import MobileContactModal from './ContactModal/MobileContactModal';
 import { scrollToElement } from '../Home/01_Landing';
 import Popup from './Popup/Popup';
 import Div100vh from 'react-div-100vh';
+import RegisterModal from './RegisterModal/RegisterModal';
 
 
 function Navbar() {
@@ -96,10 +97,6 @@ function Navbar() {
                                         if (router.pathname == '/') scrollToElement("#home-landing")
                                     }}
                                 />
-                                {/* <NavButton text='About Us'
-                                    isLink
-                                    href="/about"
-                                /> */}
                                 <NavButton text='Our Team'
                                     isLink
                                     href="/our-team"
@@ -117,7 +114,6 @@ function Navbar() {
                                     className={`${navButtonStyles.navButtonContainer} ${styles.contactButtonContainer}`}
                                 >
                                     <button
-                                        onClick={() => console.log("Contact Us")}
                                         className={navButtonStyles.navButton}
                                         id={styles.contactButton}
                                     >
@@ -125,10 +121,18 @@ function Navbar() {
                                     </button>
                                     <ContactModal />
                                 </div>
-                                <NavButton text='Register Now'
-                                    isLink
-                                    href="/register"
-                                />
+
+                                <div
+                                    className={`${navButtonStyles.navButtonContainer} ${styles.registerBtnContainer}`}
+                                >
+                                    <button
+                                        className={navButtonStyles.navButton}
+                                        id={styles.contactButton}
+                                    >
+                                        Register
+                                    </button>
+                                    <RegisterModal />
+                                </div>
                             </>
                         )
                     }
@@ -169,20 +173,6 @@ function Navbar() {
                                     }}>Home</a>
                                 </div>
                             </Link>
-
-                            {/* <Link href="/about">
-                                <div className={styles.menuItem}>
-                                    <HiInformationCircle style={{
-                                        fontSize: '30px',
-                                        marginRight: '20px',
-                                        marginBottom: '2px'
-                                    }}
-                                        color="#7C81F7"
-                                    />
-                                    <a onClick={() => setMenuOpen(false)}>About Us</a>
-                                </div>
-                            </Link> */}
-
                             <Link href="/our-team">
                                 <div className={styles.menuItem}>
                                     <RiTeamFill style={{
@@ -216,7 +206,7 @@ function Navbar() {
                                 </div>
                             </Link>
 
-                            <div className={styles.registerBtnContainer}>
+                            <div className={styles.registerBtnContainerMobile}>
                                 <RippleButton
                                     text="Register Now"
                                     type="primary"

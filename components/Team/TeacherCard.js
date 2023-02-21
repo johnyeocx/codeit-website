@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from '../../styles/Team/TeacherCard.module.scss'
 import Image from 'next/image';
@@ -11,7 +10,7 @@ function TeacherCard({ teacher }) {
             <div className={styles.cardContainer}>
                 <div className={styles.headerContainer}>
                     <div className={styles.imgContainer}>
-                        <Image className={styles.img} layout='fill' objectFit='cover' src={teacher.image} />
+                        <Image alt="teacher" className={styles.img} layout='fill' objectFit='cover' src={teacher.image} />
                     </div>
                     <div className={styles.line} />
 

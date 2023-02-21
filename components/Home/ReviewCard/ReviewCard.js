@@ -14,7 +14,7 @@ function ReviewCard({ review }) {
             <div className={styles.cardUpper}>
                 <div className={styles.left}>
                     <div className={styles.imgContainer}>
-                        <Image objectFit='cover' className={styles.reviewImage} src={review.image} />
+                        <Image objectFit='cover' className={styles.reviewImage} src={review.image} alt=''/>
                     </div>
                 </div>
                 <div className={styles.right}>

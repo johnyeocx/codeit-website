@@ -108,7 +108,7 @@ function Popup({ popupOpen, setPopupOpen, bgColor }) {
             <Div100vh className={`${styles.popupContainer} ${!popupOpen && styles.popupClosed}`}>
                 <div className={styles.mainContainer} ref={containerRef}>
                     <div className={styles.left}>
-                        <Image className={styles.image} layout='fill' src={CodingPhoto} objectFit="cover" />
+                        <Image className={styles.image} alt='' layout='fill' src={CodingPhoto} objectFit="cover" />
                         <div className={styles.gradient}></div>
                     </div>
 

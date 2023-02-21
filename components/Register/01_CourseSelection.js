@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/Register/CourseSelection.module.scss';
-
 import IntroBG from '../../assets/Register/IntroBG.svg';
 import SelectedBG from '../../assets/Register/SelectedBG.svg';
 import EssentialsBG from '../../assets/Register/EssentialsBG.svg';

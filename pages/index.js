@@ -9,7 +9,6 @@ import AppContext from '../AppContext';
 
 export default function Home() {
   const value = useContext(AppContext);
-  let { bgColor } = value.state;
   let { setBgColor } = value;
 
   useEffect(() => {

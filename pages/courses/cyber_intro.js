@@ -7,7 +7,6 @@ import Div100vh from 'react-div-100vh';
 import CourseUSP from '../../components/Courses/03_CourseUSP';
 import Curriculum from '../../components/Courses/04_Curriculum';
 import CourseRegister from '../../components/Courses/05_CourseRegister';
-import CourseTeachers from '../../components/Courses/06_CourseTeachers';
 import { cyberIntro } from '../../components/Courses/courseData';
 import NavButton from '../../components/Layout/NavButton/NavButton';
 
@@ -31,7 +30,7 @@ function CyberIntro() {
 
     useEffect(() => {
         setBgColor(bgPrimary)
-    }, [])
+    })
 
     const buttons = [
         { title: "Why Intro?", element: "#course-usp" },

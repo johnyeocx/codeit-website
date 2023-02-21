@@ -51,6 +51,7 @@ function CourseLanding({ landingData, coursePath }) {
                 <div className={styles.imgContainer}>
 
                     <Image
+                        alt=''
                         layout='fill'
                         objectFit='cover'
                         width={300}
